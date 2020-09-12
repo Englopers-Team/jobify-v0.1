@@ -29,7 +29,7 @@ https://api.ip2country.info/
 ### DATABASE
 Six table in our database
 1. employer table.
-1. employer table.
+1. company table.
 1. jobs table.
 1. offers table.
 1. auth table.
