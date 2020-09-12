@@ -35,4 +35,23 @@ Six table in our database
 1. auth table.
 1. application table.
 
+### Wireframes
+![wireframe](img/Jobify.jpg)
+[Wireframe](https://miro.com/app/board/o9J_klzoH5s=/)
+
+### Relationship Diagram
+![1](img/1.JPG)
+![2](img/2.JPG)
+![3](img/3.JPG)
+![4](img/4.JPG)
+![5](img/5.JPG)
+![6](img/6.JPG)
+![7](img/7.JPG)
+![re](img/re.JPG)
+
+### Stories and PM
+[Trello](https://trello.com/b/dK4bTxYU/englopers-jobify )
+
+
+
 
