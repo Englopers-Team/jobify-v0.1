@@ -42,9 +42,9 @@ obj.companyDeleteJob = (req, res) => {
 
 obj.companyUpdateJob = (req, res) => {
     let jobID = req.params.jobID
-    let SQL = `UPDATE jobs SET title=$1 WHERE id=$2;`;
-    console.log(req.body.title);
-    let Value = [req.body.title, jobID];
+    let { title, location, type, description } = req.body;
+    let SQL = `UPDATE jobs SET title=$1,location=$2,type=$3,description=$4 WHERE id=$5;`;
+    let Value = [title, location, type, description, jobID];
     mainObj.client.query(SQL, Value).then(() => {
         res.redirect('/company/jobs')
     })
