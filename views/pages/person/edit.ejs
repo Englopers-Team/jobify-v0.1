@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../../partials/head") %>
+
+<body>
+    <form action="/person/edit/update?_method=put" method="post">
+        <input type="text" name="first_name" value="<%= data.first_name %>">
+        <input type="text" name="last_name" value="<%= data.last_name %>">
+        <input type="text" name="phone" value="<%= data.phone %>">
+        <input type="text" name="job_title" value="<%= data.job_title %>">
+        <input type="text" name="country" value="<%= data.country %>">
+        <input type="text" name="age" value="<%= data.age %>">
+        <input type="text" name="avatar" value="<%= data.avatar %>">
+        <input type="text" name="experince" value="<%= data.experince %>">
+        <input type="text" name="cv" value="<%= data.cv %>">
+        <input type="hidden" name="id" value="<%= data.id %>">
+        <button>Edit</button>
+    </form>
+</body>
+<%- include("../../partials/footer") %>
+</html>
