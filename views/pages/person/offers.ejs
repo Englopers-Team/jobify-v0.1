@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../../partials/head") %>
+
+<body>
+    <form action="/person/offers/<%= data2[0].id %>?_method=put" method="post">
+        <select name="status">
+            <option value="waiting">waiting</option>
+            <option value="accept">accept</option>
+            <option value="reject">reject</option>
+            <% console.log(data2[0])%>
+        </select>
+        <button>update offer</button>
+    </form>
+
+</body>
+<%- include("../../partials/footer") %>
+
+</html>
