@@ -5,18 +5,20 @@ const mainObj = require('../server.js')
 
 obj.login = (req, res) => {
     let { email, password, session_id } = req.body;
+    console.log(session_id);
     let SQL1 = `SELECT * FROM auth WHERE email=$1 AND password=$2;`
     let Values1 = [email, password];
-    mainObj.client.query(SQL1,Values1).then((data) =>{
-        if(data.rows.length){
+    mainObj.client.query(SQL1, Values1).then((data) => {
+        if (data.rows.length) {
+            console.log(session_id);
             let SQL2 = `UPDATE auth SET session_id=$1 WHERE email=$2;`
-            let Values2 = [session_id,email];
-            mainObj.client.query(SQL2,Values2).then(() =>{
+            let Values2 = [session_id, email];
+            mainObj.client.query(SQL2, Values2).then(() => {
                 obj.sessionData = session_id;
                 res.redirect('/');
                 // console.log("User found")
             })
-        }else{
+        } else {
             console.log("Can't find user in database")
         }
     })
@@ -69,6 +71,9 @@ obj.companySignUp = (req, res) => {
 
 
 obj.logout = (req, res) => {
+    console.log('logout');
+    obj.sessionData = undefined;
+    res.redirect('/');
 
 }
 
