@@ -141,6 +141,16 @@ obj.searchPerson = (req, res) => {
 }
 
 obj.personOffer = (req, res) => {
+    const obj = require('./auth.js')
+    let { person_id, company_id, title, location, type, description } = req.body;
+    // console.log(person_id, company_id);
+    let SQL = `INSERT INTO job_offers (person_id,company_id,title,location,type,description) VALUES ($1,$2,$3,$4,$5,$6);`
+    let values = [person_id, company_id, title, location, type, description];
+    mainObj.client.query(SQL, values)
+        .then(() => {
+            res.redirect('/')
+        })
+
 
 
 }
