@@ -32,6 +32,10 @@ obj.companySubmitJobPage = (req, res) => {
 
     mainObj.client.query(SQL, Value).then((data) => {
         let id = data.rows[0].id;
+        let SQL = `SELECT * FROM company WHERE auth_id=${id};`;
+        mainObj.client.query(SQL).then((data2) => {
+            res.render("pages/company/submitJob", { data: data2.rows[0] })
+        })
 
     })
 }
