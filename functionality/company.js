@@ -32,11 +32,23 @@ obj.companySubmitJobPage = (req, res) => {
 
     mainObj.client.query(SQL, Value).then((data) => {
         let id = data.rows[0].id;
+        let SQL = `SELECT * FROM company WHERE auth_id=${id};`;
+        mainObj.client.query(SQL).then((data2) => {
+            res.render("pages/company/submitJob", { data: data2.rows[0] })
+        })
 
     })
 }
 
 obj.companySubmitJob = (req, res) => {
+    console.log(req.body);
+    let { id, title, location, type, description } = req.body;
+    console.log(id);
+    let SQL = `INSERT INTO jobs (company_id,title,location,type,description) VALUES ($1,$2,$3,$4,$5);`;
+    let VALUES = [id, title, location, type, description];
+    mainObj.client.query(SQL, VALUES).then(() => {
+        res.redirect('/company/jobs');
+    })
 
 }
 

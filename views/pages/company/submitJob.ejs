@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../../partials/head") %>
+
+<body>
+    <form action="/company/jobs/submit/action" method="post">
+        <input type="text" value="" name="title">
+        <input type="text" value="" name="location">
+        <select name="type">
+            <option selected value="full time">full time</option>
+            <option value="part time">part time</option>
+
+        </select>
+        <input type="text" value="" name="description">
+        <input type="hidden" value="<%= data.id %>" name="id">
+        <button type="submit">submit</button>
+    </form>
+</body>
+<%- include("../../partials/footer") %>
+
+</html>
