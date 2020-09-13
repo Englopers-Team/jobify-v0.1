@@ -3,10 +3,19 @@
 <%- include("../partials/head") %>
 
 <body>
+    <form action="/search/company" method="get">
+        <button>Company</button>
+    </form>
     <% console.log(data) %>
     <% console.log(data2) %>
     <% console.log(data3) %>
     <button><a href="/logout">logout</a></button>
+
+    <form action="/search/job" method="get">
+        <input type="text" name="title" value="">
+        <input type="text" name="location" value="">
+        <button>Search</button>
+    </form>
 </body>
 <%- include("../partials/footer") %>
 

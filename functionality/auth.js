@@ -32,7 +32,7 @@ obj.signupPage = (req, res) => {
 
 obj.personSignUp = (req, res) => {
     // console.log(client);
-
+    
     let { first_name, last_name, email, phone, job_title, country, account_type, session_id, password } = req.body;
     let SQL1 = `INSERT INTO auth (email,password,account_type,session_id) VALUES ($1,$2,$3,$4);`
     let Values1 = [email, password, account_type, session_id];

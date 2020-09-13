@@ -13,6 +13,7 @@ obj.personApps = (req, res) => {
         let id = data.rows[0].id;
 
     })
+
 }
 
 obj.personDeleteApp = (req, res) => {
