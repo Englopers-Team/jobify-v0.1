@@ -76,35 +76,82 @@ obj.searchCompany = (req, res) => {
     let SQL = `SELECT * FROM company WHERE company_name=$1 AND country=$2;`
     let value = [company_name, country]
     mainObj.client.query(SQL, value)
-        .then(result =>{
+        .then(result => {
             if (obj.sessionData == undefined) {
-                res.render("pages/searches/searchCompanyResult-guest" , {data : result.rows[0]})
+                res.render("pages/searches/searchCompanyResult-guest", { data: result.rows[0] })
             } else {
                 let id = result.rows[0].id;
                 let SQL = `SELECT * FROM person WHERE auth_id=$1;`
                 let Value = [id];
                 mainObj.client.query(SQL, Value)
-                .then(personData=>{
-                    res.render("pages/searches/searchCompanyResult-user" , {data : result.rows[0] ,data2:personData.rows[0]})
-                })
+                    .then(personData => {
+                        res.render("pages/searches/searchCompanyResult-user", { data: result.rows[0], data2: personData.rows[0] })
+                    })
             }
         })
 
 }
 
 
-obj.searchPerson = (req, res) => {
+obj.searchPersonPage = (req, res) => {
+
     const obj = require('./auth.js')
 
     let SQL = `SELECT * FROM auth WHERE session_id=$1;`
     let Value = [obj.sessionData];
 
-    mainObj.client.query(SQL, Value).then((data) => {
-        let id = data.rows[0].id;
+    mainObj.client.query(SQL, Value)
+        .then((data) => {
+            let id = data.rows[0].id;
+            let SQL = `SELECT * FROM company WHERE auth_id=$1;`
+            let Value = [id];
+            mainObj.client.query(SQL, Value)
+                .then((resultCompany) => {
+                    res.render("pages/searches/person", { data: resultCompany.rows[0] })
+                })
 
-    })
+        })
 }
+
+obj.searchPerson = (req, res) => {
+    const obj = require('./auth.js')
+    let SQL = `SELECT * FROM auth WHERE session_id=$1;`
+    let Value = [obj.sessionData];
+
+    mainObj.client.query(SQL, Value)
+        .then((data) => {
+            let id = data.rows[0].id;
+            let SQL = `SELECT * FROM company WHERE auth_id=$1;`
+            let Value = [id];
+            mainObj.client.query(SQL, Value)
+                .then((resultCompany) => {
+                    let { job_title, country } = req.query;
+                    let SQL = `SELECT * FROM person WHERE job_title=$1 AND country=$2;`
+                    let values = [job_title, country];
+                    mainObj.client.query(SQL, values)
+                        .then((result) => {
+                            res.render("pages/searches/personResults", { data: result.rows, data2: resultCompany.rows[0] })
+                        })
+
+                })
+
+        })
+
+
+}
+
 obj.personOffer = (req, res) => {
+    const obj = require('./auth.js')
+    let { person_id, company_id, title, location, type, description } = req.body;
+    // console.log(person_id, company_id);
+    let SQL = `INSERT INTO job_offers (person_id,company_id,title,location,type,description) VALUES ($1,$2,$3,$4,$5,$6);`
+    let values = [person_id, company_id, title, location, type, description];
+    mainObj.client.query(SQL, values)
+        .then(() => {
+            res.redirect('/')
+        })
+
+
 
 }
 

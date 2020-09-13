@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%console.log(data,data2) %>
+    <% data.forEach(item=>{%>
+    <img src="<%= item.avatar%>" alt="personal pic">
+    <h3><%= item.first_name%> <span><%= item.last_name%></span></h3>
+    <p><%= item.phone%></p>
+    <p><%= item.age%></p>
+    <a href="<%= item.cv%>">Cv</a>
+    <form action="/search/person/offer" method="POST">
+        <input type="hidden" name="person_id" value="<%= item.id%>">
+        <input type="hidden" name="company_id" value="<%= data2.id%>">
+        <button>SEND OFFER</button>
+
+    </form>
+    <%  }) %>
+
+</body>
+
+</html>

@@ -51,7 +51,8 @@ app.post('/search/job/apply/:jobID', searches.applyJob); // redirect("/person/ap
 app.get('/search/company', searches.searchCompanyPage); // render("pages/searches/company")
 app.get('/search/company/result', searches.searchCompany) // render("pages/searches/searchCompanyResult")
 
-app.get('/search/person', searches.searchPerson); // render("pages/searches/person")
+app.get('/search/person', searches.searchPersonPage); // render("pages/searches/person")
+app.get('/search/person/search', searches.searchPerson); // render("pages/searches/personResults")
 app.post('/search/person/offer', searches.personOffer); // redirect("/")
 
 // Aboutus-------------------------------------------------------------------
@@ -82,7 +83,7 @@ app.delete('/company/offer/delete/:offerID', company.personDeleteOffer); // redi
 
 // Routes----------------------------------------------------------------------------------------
 
-mainObj.JOB = function(data){
+mainObj.JOB = function (data) {
     this.title = data.title;
     this.location = data.location;
     this.type = data.type;
