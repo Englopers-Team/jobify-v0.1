@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../../partials/head") %>
+
+<body>
+    <form action="/person/apps/<%= data2[0].id%>?_method=delete" method="post">
+        <button type="submit">delete</button>
+    </form>
+</body>
+<%- include("../../partials/footer") %>
+
+</html>
