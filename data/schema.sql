@@ -67,5 +67,7 @@ INSERT INTO person (first_name, last_name, phone, job_title, country, age, avata
 INSERT INTO company (company_name,phone,company_url,logo,country,auth_id) VALUES ('Zakaria Company', '079028555', 'www.zak.com', 'https://library.kissclipart.com/20180929/ooq/kissclipart-avatar-person-clipart-avatar-computer-icons-person-87355c56a1748473.jpg', 'Jordan', 2);
 
 INSERT INTO jobs (title,location,type,description,company_id) VALUES ('Developer','Jordan','Full Time','A full time job with 900jd salary.',1);
+INSERT INTO jobs (title,location,type,description,company_id) VALUES ('Developer','usa','Full Time (iam from database)','A full time job with 900jd salary.',1);
+
 INSERT INTO applications (status,person_id,job_id,company_id) VALUES ('waiting', 1,1,1);
 INSERT INTO job_offers (title,location,type,description,status,person_id,company_id) VALUES ('Web Dev','Jordan','Full Time','500 salary','Waiting',1,1);

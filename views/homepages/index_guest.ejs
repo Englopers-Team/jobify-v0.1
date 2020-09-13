@@ -2,7 +2,16 @@
 <html lang="en">
 <%- include("../partials/head") %>
 <body>
+    <form action="/search/company" method="get">
+        <button>Company</button>
+    </form>
     <%- include("../partials/login") %>
+    <form action="/search/job" method="get">
+        <input type="text" name="title" value="">
+        <input type="text" name="location" value="">
+        <button>Search</button>
+    </form>
+
 </body>
 <%- include("../partials/footer") %>
 </html>

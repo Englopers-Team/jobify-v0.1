@@ -35,7 +35,7 @@ const company = require('./functionality/company.js');
 // Routes----------------------------------------------------------------------------------------
 
 // HomePage------------------------------------------------------------------
-app.get('/', homePage.homePage); // render("index")
+app.get('/', homePage.homePage); // render("index_gust.ejs") or ("index_person.ejs") or ("index_company.ejs")
 // Auth----------------------------------------------------------------------
 app.post('/login', auth.login); // redirect("/") 
 app.get('/signup', auth.signupPage); // render("pages/signup")
@@ -45,10 +45,11 @@ app.post('/signup/company', auth.companySignUp); // redirect("/")
 
 app.get('/logout', auth.logout); // redirect("/")
 // Searches------------------------------------------------------------------
-app.get('/search/job', searches.searchJob); // render("pages/searches/job")
+app.get('/search/job', searches.searchJob); // render("pages/searches/job-guest") or ("pages/searches/job-user")
 app.post('/search/job/apply/:jobID', searches.applyJob); // redirect("/person/apps")
 
-app.get('/search/company', searches.searchCompany); // render("pages/searches/company")
+app.get('/search/company', searches.searchCompanyPage); // render("pages/searches/company")
+app.get('/search/company/result', searches.searchCompany) // render("pages/searches/searchCompanyResult")
 
 app.get('/search/person', searches.searchPerson); // render("pages/searches/person")
 app.post('/search/person/offer', searches.personOffer); // redirect("/")
