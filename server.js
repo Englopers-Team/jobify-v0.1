@@ -1,14 +1,15 @@
 'use strict';
 // Dependencies----------------------------------------------------------------------------------
+const mainObj = {};
 
 const express = require("express");
-const superagent = require("superagent");
+mainObj.superagent = require("superagent");
 const methodOverride = require("method-override");
 const pg = require("pg");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
-const client = new pg.Client(process.env.DATABASE_URL);
+mainObj.client = new pg.Client(process.env.DATABASE_URL);
 const app = express();
 
 app.set("view engine", "ejs");
@@ -16,6 +17,9 @@ app.use(express.static("./public"))
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
+module.exports = mainObj;
+
+// let sessionData = require('./functionality/auth.js') || "";
 
 
 
@@ -29,10 +33,6 @@ const person = require('./functionality/person.js');
 const company = require('./functionality/company.js');
 
 // Routes----------------------------------------------------------------------------------------
-
-// app.post('/auth', (req,res) => {
-//     console.log(req.body);
-// });
 
 // HomePage------------------------------------------------------------------
 app.get('/', homePage.homePage); // render("index")
@@ -81,9 +81,19 @@ app.delete('/company/offer/delete/:offerID', company.personDeleteOffer); // redi
 
 // Routes----------------------------------------------------------------------------------------
 
+mainObj.JOB = function(data){
+    this.title = data.title;
+    this.location = data.location;
+    this.type = data.type;
+    this.description = data.description;
+    this.logo = data.company_logo;
+    this.company_url = data.company_url;
+}
 
 
-client.connect().then(() => {
+
+
+mainObj.client.connect().then(() => {
     app.listen(PORT, () => {
         console.log(`Listening on ${PORT}`);
     })

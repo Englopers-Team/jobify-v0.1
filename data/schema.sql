@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS auth (
     email VARCHAR(255) UNIQUE,
     password VARCHAR(255),
     account_type VARCHAR(255),
-    season_id VARCHAR(255) UNIQUE
+    session_id VARCHAR(255) UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS person (
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS jobs (
 
 CREATE TABLE IF NOT EXISTS applications (
     id SERIAL PRIMARY KEY,
-    status VARCHAR(255),
+    status VARCHAR(255) DEFAULT 'Waiting',
     person_id INT REFERENCES person (id),
     job_id INT REFERENCES jobs (id),
     company_id INT REFERENCES company (id)
@@ -55,13 +55,13 @@ CREATE TABLE IF NOT EXISTS job_offers (
     location VARCHAR(255),
     type VARCHAR(255),
     description TEXT,
-    status VARCHAR(255),
+    status VARCHAR(255) DEFAULT 'Waiting',
     person_id INT REFERENCES person (id),
     company_id INT REFERENCES company (id)
 );
 
-INSERT INTO auth (email,password,account_type,season_id) VALUES('abd@gmail.com','123456','p','xxx3215315gew');
-INSERT INTO auth (email,password,account_type,season_id) VALUES('zak@gmail.com','123456','c','xxx3215rgagagrga');
+INSERT INTO auth (email,password,account_type,session_id) VALUES('abd@gmail.com','123456','p','xxx3215315gew');
+INSERT INTO auth (email,password,account_type,session_id) VALUES('zak@gmail.com','123456','c','xxx3215rgagagrga');
 
 INSERT INTO person (first_name, last_name, phone, job_title, country, age, avatar, experince, cv, auth_id) VALUES ('Abd','Zat','0790278534','Developer','Jordan',24,'https://library.kissclipart.com/20180929/ooq/kissclipart-avatar-person-clipart-avatar-computer-icons-person-87355c56a1748473.jpg', 5,'cv link', 1);
 INSERT INTO company (company_name,phone,company_url,logo,country,auth_id) VALUES ('Zakaria Company', '079028555', 'www.zak.com', 'https://library.kissclipart.com/20180929/ooq/kissclipart-avatar-person-clipart-avatar-computer-icons-person-87355c56a1748473.jpg', 'Jordan', 2);
