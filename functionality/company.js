@@ -41,6 +41,14 @@ obj.companySubmitJobPage = (req, res) => {
 }
 
 obj.companySubmitJob = (req, res) => {
+    console.log(req.body);
+    let { id, title, location, type, description } = req.body;
+    console.log(id);
+    let SQL = `INSERT INTO jobs (company_id,title,location,type,description) VALUES ($1,$2,$3,$4,$5);`;
+    let VALUES = [id, title, location, type, description];
+    mainObj.client.query(SQL, VALUES).then(() => {
+        res.redirect('/company/jobs');
+    })
 
 }
 
