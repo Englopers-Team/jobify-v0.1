@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
     <title>Document</title>
 </head>
+
 <body><% data1.forEach((item,index)=>{ %>.
     <img src="<%= item.logo %>" alt="" width="50px">
     <h3><%= item.title %></h3>
@@ -13,7 +14,7 @@
     <button id="id<%= index %>" onClick=reply_click(this.id)>APPLY</button>
     <div style="display: none;" class="dbid<%= index %>">
         <fieldset>
-            <button id="id<%= index %>" onClick=reply_click(this.id) >X</button>
+            <button id="id<%= index %>" onClick=reply_click(this.id)>X</button>
             <form action="/search/job/apply/<%=item.id%>" method="POST">
                 <p>company INFO</p>
                 <img src="<%= item.logo %>" alt="" width="50px">
@@ -36,7 +37,7 @@
 
     </div>
     <%})%>
-    
+
     <% console.log(data2) %>
     <% data2.forEach((item,index)=>{ %>.
     <img src="<%= item.logo %>" alt="" width="50px">
@@ -48,7 +49,7 @@
         <fieldset>
             <button id="api<%= index %>" onClick=reply_clickapi(this.id)>X</button>
             <p><%= item.location %></p>
-            <a href="company_url">company website</a>
+            <a href="<%= item.company_url %>">company website</a>
         </fieldset>
     </div>
     <%})%>
