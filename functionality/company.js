@@ -87,9 +87,9 @@ obj.companyEdit = (req, res) => {
     let Value = [obj.sessionData];
     mainObj.client.query(SQL, Value).then((data) => {
         let id = data.rows[0].id;
-        let SQL = `SELECT * FROM company WHERE id=${id};`;
-        mainObj.client.query(SQL).then((data) => {
-            res.render("pages/company/edit", { data: data.rows[0] })
+        let SQL = `SELECT * FROM company WHERE auth_id=${id};`;
+        mainObj.client.query(SQL).then((data2) => {
+            res.render("pages/company/edit", { data: data2.rows[0] })
         })
     })
 }
