@@ -9,7 +9,7 @@
     <%- include("../partials/login") %>
     <form action="/search/job" method="get">
         <input type="text" name="title" value="">
-        <input type="text" name="location" value="">
+        <input type="text" name="location" value="<%= ip%>">
         <button>Search</button>
     </form>
 
