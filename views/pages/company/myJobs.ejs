@@ -3,13 +3,31 @@
 <%- include("../../partials/head") %>
 
 <body>
-    <% console.log(data) %>
-    <% console.log(data2) %>
-    <form action="/company/jobs/delete/<%= data2[0].id%>?_method=delete" method="post">
+    <% console.log('data:',data) %>
+    <% console.log('data2:',data2) %>
+    <% data2.forEach((item,index)=>{ %>
+    <p><%= item.title%></p>
+    <p><%= item.location%></p>
+    <p><%= item.type%></p>
+    <div style="display: none;" id="div<%= index%>">
+        <button id="<%= index%>" onClick=updateMyJobs(this.id)>x</button>
+        <form action="/company/jobs/update/<%= item.id%>?_method=put" method="post">
+            <input type="text" value="<%= item.title%>" name="title">
+            <input type="text" value="<%= item.location%>" name="location">
+            <select name="type">
+                <option value="full time">full time</option>
+                <option value="part time">part time</option>
+            </select>
+            <input type="text" value="<%= item.description%>" name="description">
+            <button type="submit">update</button></form>
+    </div>
+
+    <form action="/company/jobs/delete/<%= item.id%>?_method=delete" method="post">
         <button type="submit">delete</button></form>
-    <form action="/company/jobs/update/<%= data2[0].id%>?_method=put" method="post">
-        <input type="text" value="<%= data2[0].title%>" name="title">
-        <button type="submit">update</button></form>
+
+    <button id="<%= index%>" onClick=updateMyJobs(this.id)>update</button>
+    <% })%>
+
 </body>
 <%- include("../../partials/footer") %>
 
