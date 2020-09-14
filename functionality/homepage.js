@@ -27,10 +27,25 @@ obj.homePage = (req, res) => {
                         jobData = data3.body.map(item => {
                             return new mainObj.JOB(item);
                         })
-                        let SQL = `SELECT * FROM jobs WHERE title=$1 AND location=$2;`
+                        let SQL = `SELECT * FROM jobs JOIN company ON jobs.company_id=company.id WHERE title=$1 AND location=$2;`
                         let Values = [job_title, country];
                         mainObj.client.query(SQL, Values).then((data4) => {
-                            res.render('homepages/index_person', { data: data2.rows[0], data2: jobData, data3: data4.rows })
+                            let arrayData = [];
+                            for(let i = 0;i<=2;i++){
+                                if(jobData[i] == undefined){
+                                }else {
+                                    arrayData.push(jobData[i])
+                                }
+                            }
+                            let databaseData = [];
+                            for(let i = 0;i<=2;i++){
+                                if(data4.rows[i] == undefined){
+                                }else {
+                                    databaseData.push(data4.rows[i])
+                                }
+                            }
+                            console.log(databaseData)
+                            res.render('homepages/index_person', { data: data2.rows[0], data2: arrayData, data3: databaseData })
                         })
                     })
                     // let SQL = `SELECT * FROM jobs WHERE title=$1 AND location=$2;`
@@ -42,7 +57,7 @@ obj.homePage = (req, res) => {
                 mainObj.client.query(SQL, Value).then((data) => {
                     let SQL2 = `SELECT applications.id,status,title,first_name,last_name,job_title,avatar,age,experince,cv,country FROM applications JOIN jobs ON applications.job_id=jobs.id JOIN person ON applications.person_id=person.id WHERE applications.company_id=${data.rows[0].id};`
                     mainObj.client.query(SQL2).then((data2) => {
-                        let SQL3 = `SELECT status,title,type,first_name,last_name,avatar,age,experince FROM job_offers JOIN person ON job_offers.person_id=person.id WHERE company_id=${data.rows[0].id};`
+                        let SQL3 = `SELECT job_offers.id,status,title,type,first_name,last_name,avatar,age,experince FROM job_offers JOIN person ON job_offers.person_id=person.id WHERE company_id=${data.rows[0].id};`
                         mainObj.client.query(SQL3).then((data3) => {
                             res.render('homepages/index_company', { data: data.rows[0], data2: data2.rows, data3: data3.rows })
 

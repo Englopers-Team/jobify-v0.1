@@ -19,9 +19,6 @@ app.use(methodOverride("_method"));
 
 module.exports = mainObj;
 
-// let sessionData = require('./functionality/auth.js') || "";
-
-
 
 // Import----------------------------------------------------------------------------------------
 
