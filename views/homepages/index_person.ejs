@@ -6,16 +6,48 @@
     <form action="/search/company" method="get">
         <button>Company</button>
     </form>
-    <% console.log(data) %>
-    <% console.log(data2) %>
-    <% console.log(data3) %>
+    <% console.log("data:", data) %>
+    <% console.log("data2:",data2) %>
+    <% console.log("data3",data3) %>
+    
     <button><a href="/logout">logout</a></button>
-
     <form action="/search/job" method="get">
         <input type="text" name="title" value="">
         <input type="text" name="location" value="">
         <button>Search</button>
     </form>
+
+    <div>
+        <div>
+            <h2>Recommanded Jobs</h2>
+        </div>
+        <% data3.forEach((item) =>{ %>
+        <div>
+            <form action="" method="post">
+                <img src="<%=item.logo%>" alt="">
+                <p><%=item.title %></p>
+                <p><%=item.type %></p>
+                <p><%=item.location %></p>
+                <p><%=item.company_name %></p>
+                <button>Apply</button>
+            </form>
+        </div>
+        <% }) %>
+
+        <% data2.forEach((item) =>{ %>
+            <div>
+                <form action="" method="post">
+                    <img src="<%=item.logo%>" alt="">
+                    <p><%=item.title %></p>
+                    <p><%=item.type %></p>
+                    <p><%=item.location %></p>
+                    <p><%=item.company_name %></p>
+                    <button>Details</button>
+                </form>
+            </div>
+            <% }) %>
+
+    </div>
 </body>
 <%- include("../partials/footer") %>
 

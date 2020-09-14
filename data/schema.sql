@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS jobs (
 
 CREATE TABLE IF NOT EXISTS applications (
     id SERIAL PRIMARY KEY,
-    status VARCHAR(255) DEFAULT 'Waiting',
+    status VARCHAR(255) DEFAULT 'Pending',
     person_id INT REFERENCES person (id),
     job_id INT REFERENCES jobs (id),
     company_id INT REFERENCES company (id)
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS job_offers (
     location VARCHAR(255),
     type VARCHAR(255),
     description TEXT,
-    status VARCHAR(255) DEFAULT 'Waiting',
+    status VARCHAR(255) DEFAULT 'Pending',
     person_id INT REFERENCES person (id),
     company_id INT REFERENCES company (id)
 );
