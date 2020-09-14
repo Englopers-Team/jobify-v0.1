@@ -31,9 +31,29 @@ obj.searchJob = (req, res) => {
                                     .then((resultPerson) => {
                                         res.render("pages/searches/job-user", { data1: resultDataBase.rows, data2: jobData, data3: resultPerson.rows[0] })
                                     })
+                                    .catch(error => {
+                                        let errorReason = "Error | Can't select person details in database."
+                                        console.log(errorReason);
+                                        res.status(500).render("pages/error", { data: errorReason });
+                                    })
+                            })
+                            .catch(error => {
+                                let errorReason = "Error | Can't find person details in database."
+                                console.log(errorReason);
+                                res.status(500).render("pages/error", { data: errorReason });
                             })
                     }
                 })
+                .catch(error => {
+                    let errorReason = "Error | Can't get data from api."
+                    console.log(errorReason);
+                    res.status(500).render("pages/error", { data: errorReason });
+                })
+        })
+        .catch(error => {
+            let errorReason = "Error | Can't get data from database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
         })
 }
 
@@ -46,6 +66,11 @@ obj.applyJob = (req, res) => {
     mainObj.client.query(SQL, value)
         .then(() => {
             res.redirect("/person/apps")
+        })
+        .catch(error => {
+            let errorReason = "Error | Can't insert application to database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
         })
 }
 
@@ -66,6 +91,16 @@ obj.searchCompanyPage = (req, res) => {
                     .then((resultPerson) => {
                         res.render("pages/searches/company-user", { data: resultPerson.rows[0] })
                     })
+                    .catch(error => {
+                        let errorReason = "Error | Can't select person details in database."
+                        console.log(errorReason);
+                        res.status(500).render("pages/error", { data: errorReason });
+                    })
+            })
+            .catch(error => {
+                let errorReason = "Error | Can't find person details in database."
+                console.log(errorReason);
+                res.status(500).render("pages/error", { data: errorReason });
             })
     }
 }
@@ -87,7 +122,17 @@ obj.searchCompany = (req, res) => {
                     .then(personData => {
                         res.render("pages/searches/searchCompanyResult-user", { data: result.rows[0], data2: personData.rows[0] })
                     })
+                    .catch(error => {
+                        let errorReason = "Error | Can't find person details in database."
+                        console.log(errorReason);
+                        res.status(500).render("pages/error", { data: errorReason });
+                    })
             }
+        })
+        .catch(error => {
+            let errorReason = "Error | Can't find company in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
         })
 
 }
@@ -109,7 +154,17 @@ obj.searchPersonPage = (req, res) => {
                 .then((resultCompany) => {
                     res.render("pages/searches/person", { data: resultCompany.rows[0] })
                 })
+                .catch(error => {
+                    let errorReason = "Error | Can't find company details from database."
+                    console.log(errorReason);
+                    res.status(500).render("pages/error", { data: errorReason });
+                })
 
+        })
+        .catch(error => {
+            let errorReason = "Error | Can't find person details in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
         })
 }
 
@@ -132,9 +187,24 @@ obj.searchPerson = (req, res) => {
                         .then((result) => {
                             res.render("pages/searches/personResults", { data: result.rows, data2: resultCompany.rows[0] })
                         })
+                        .catch(error => {
+                            let errorReason = "Error | Can't find person with specific data in database."
+                            console.log(errorReason);
+                            res.status(500).render("pages/error", { data: errorReason });
+                        })
 
                 })
+                .catch(error => {
+                    let errorReason = "Error | Can't select company details in database."
+                    console.log(errorReason);
+                    res.status(500).render("pages/error", { data: errorReason });
+                })
 
+        })
+        .catch(error => {
+            let errorReason = "Error | Can't find company details in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
         })
 
 
@@ -149,6 +219,11 @@ obj.personOffer = (req, res) => {
     mainObj.client.query(SQL, values)
         .then(() => {
             res.redirect('/')
+        })
+        .catch(error => {
+            let errorReason = "Error | Can't insert offer to person in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
         })
 
 

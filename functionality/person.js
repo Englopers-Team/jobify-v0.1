@@ -17,8 +17,22 @@ obj.personApps = (req, res) => {
             mainObj.client.query(SQL1).then(data2 => {
                 res.render("pages/person/apps", { data: data1.rows[0], data2: data2.rows });
             })
+            .catch(error => {
+                let errorReason = "Error | Can't select data from applications and jobs and company from database."
+                console.log(errorReason);
+                res.status(500).render("pages/error", { data: errorReason });
+            })
         })
-
+        .catch(error => {
+            let errorReason = "Error | Can't select person details from database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
+        })
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't find person details in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 
 }
@@ -28,6 +42,11 @@ obj.personDeleteApp = (req, res) => {
     let values = [req.params.appID]
     mainObj.client.query(SQL, values).then(() => {
         res.redirect("/person/apps");
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't delete application from database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 
 }
@@ -47,9 +66,24 @@ obj.personOffers = (req, res) => {
             mainObj.client.query(SQL2).then(data2 => {
                 res.render("pages/person/offers", { data: data1.rows[0], data2: data2.rows })
             })
+            .catch(error => {
+                let errorReason = "Error | Can't find job offers and company details in database."
+                console.log(errorReason);
+                res.status(500).render("pages/error", { data: errorReason });
+            })
+        })
+        .catch(error => {
+            let errorReason = "Error | Can't select person details in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
         })
 
 
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't find person details in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 
@@ -59,6 +93,11 @@ obj.personUpdateOffer = (req, res) => {
     let Values = [req.body.status, offerID];
     mainObj.client.query(SQL, Values).then(() => {
         res.redirect('/person/offers')
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't update offer status in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 
 }
@@ -76,6 +115,16 @@ obj.personEdit = (req, res) => {
         mainObj.client.query(SQL).then((data) => {
             res.render('pages/person/edit', { data: data.rows[0] });
         })
+        .catch(error => {
+            let errorReason = "Error | Can't select person details in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
+        })
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't find person details in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 
@@ -86,6 +135,11 @@ obj.personUpdateEdit = (req, res) => {
     let Values = [first_name, last_name, phone, job_title, country, age, avatar, experince, cv, id]
     mainObj.client.query(SQL, Values).then(() => {
         res.redirect('/')
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't update person details in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 
 }

@@ -13,7 +13,22 @@ obj.companyJobs = (req, res) => {
             mainObj.client.query(SQL2).then((data2) => {
                 res.render('pages/company/myJobs', { data: data1.rows[0], data2: data2.rows })
             })
+            .catch(error => {
+                let errorReason = "Error | Can't find jobs in database."
+                console.log(errorReason);
+                res.status(500).render("pages/error", { data: errorReason });
+            })
         })
+        .catch(error => {
+            let errorReason = "Error | Can't find company details from database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
+        })
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't find company details in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 obj.companyDeleteJob = (req, res) => {
@@ -26,7 +41,18 @@ obj.companyDeleteJob = (req, res) => {
         mainObj.client.query(SQL1, Value2).then(() => {
             res.redirect('/company/jobs')
         })
+        .catch(error => {
+            let errorReason = "Error | Can't delete job from database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
+        })
     })
+    .catch(error => {
+        let errorReason = "Error | Can't delete applications from database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
+    })
+    
 }
 obj.companyUpdateJob = (req, res) => {
     let jobID = req.params.jobID;
@@ -35,6 +61,11 @@ obj.companyUpdateJob = (req, res) => {
     let Value = [title, location, type, description, jobID];
     mainObj.client.query(SQL, Value).then(() => {
         res.redirect('/company/jobs')
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't update jobs details in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 obj.companySubmitJobPage = (req, res) => {
@@ -47,6 +78,16 @@ obj.companySubmitJobPage = (req, res) => {
         mainObj.client.query(SQL).then((data2) => {
             res.render("pages/company/submitJob", { data: data2.rows[0] })
         })
+        .catch(error => {
+            let errorReason = "Error | Can't select company details in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
+        })
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't find company details in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 obj.companySubmitJob = (req, res) => {
@@ -57,6 +98,11 @@ obj.companySubmitJob = (req, res) => {
     let VALUES = [id, title, location, type, description];
     mainObj.client.query(SQL, VALUES).then(() => {
         res.redirect('/company/jobs');
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't insert job to database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 obj.companyEdit = (req, res) => {
@@ -69,6 +115,16 @@ obj.companyEdit = (req, res) => {
         mainObj.client.query(SQL).then((data2) => {
             res.render("pages/company/edit", { data: data2.rows[0] })
         })
+        .catch(error => {
+            let errorReason = "Error | Can't select company details database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
+        })
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't find company details in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 obj.companyUpdateEdit = (req, res) => {
@@ -77,6 +133,11 @@ obj.companyUpdateEdit = (req, res) => {
     let VALUES = [company_name, phone, logo, country, company_url, id];
     mainObj.client.query(SQL, VALUES).then(() => {
         res.redirect('/');
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't update company details in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 obj.appAnswer = (req, res) => {
@@ -87,6 +148,11 @@ obj.appAnswer = (req, res) => {
     mainObj.client.query(SQL, Values).then(() => {
         res.redirect('/');
     })
+    .catch(error => {
+        let errorReason = "Error | Can't update app status in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
+    })
 }
 obj.personDeleteOffer = (req, res) => {
     let id = req.params.offerID;
@@ -94,6 +160,11 @@ obj.personDeleteOffer = (req, res) => {
     let Value = [id];
     mainObj.client.query(SQL, Value).then(() => {
         res.redirect('/');
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't delete offer from database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 module.exports = obj;
