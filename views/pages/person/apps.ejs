@@ -3,10 +3,23 @@
 <%- include("../../partials/head") %>
 
 <body>
-    <form action="/person/apps/<%= data2[0].id%>?_method=delete" method="post">
-        <button type="submit">delete</button>
-    </form>
+    <% console.log("data2",data2)%>
+    <div>
+        <%data2.forEach(item=>{%>
+        <div>
+            <img src="<%= item.logo%>" alt="">
+            <h3><%= item.title%></h3>
+            <p><%= item.staus%></p>
+            <p><%= item.company_name%></p>
+
+            <form action="/person/apps/<%= data2[0].id%>?_method=delete" method="post">
+                <button type="submit">delete</button>
+            </form>
+        </div>
+        <%})%>
+    </div>
 </body>
+
 <%- include("../../partials/footer") %>
 
 </html>
