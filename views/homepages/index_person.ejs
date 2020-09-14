@@ -6,11 +6,20 @@
     <form action="/search/company" method="get">
         <button>Company</button>
     </form>
+    <form action="/person/apps" method="get">
+        <button>my apps</button>
+    </form>
+    <form action="/person/offers" method="get">
+        <button>my offers</button>
+    </form>
+    <form action="/person/edit" method="get">
+        <button>Edit Profile</button>
+    </form>
+    <button><a href="/logout">logout</a></button>
     <% console.log("data:", data) %>
     <% console.log("data2:",data2) %>
     <% console.log("data3",data3) %>
-    
-    <button><a href="/logout">logout</a></button>
+
     <form action="/search/job" method="get">
         <input type="text" name="title" value="">
         <input type="text" name="location" value="">
@@ -21,31 +30,58 @@
         <div>
             <h2>Recommanded Jobs</h2>
         </div>
-        <% data3.forEach((item) =>{ %>
+        <% data3.forEach((item,index) =>{ %>
         <div>
-            <form action="" method="post">
-                <img src="<%=item.logo%>" alt="">
-                <p><%=item.title %></p>
-                <p><%=item.type %></p>
-                <p><%=item.location %></p>
-                <p><%=item.company_name %></p>
-                <button>Apply</button>
-            </form>
+            <img src="<%=item.logo%>" alt="">
+            <p><%=item.title %></p>
+            <p><%=item.type %></p>
+            <p><%=item.location %></p>
+            <p><%=item.company_name %></p>
+            <button id="id<%= index %>" onClick=reply_click(this.id)>Apply</button>
+        </div>
+        <div style="display: none;" class="dbid<%= index %>">
+            <fieldset>
+                <button id="id<%= index %>" onClick=reply_click(this.id)>X</button>
+                <form action="/search/job/apply/<%=item.id%>" method="POST">
+                    <p>company INFO</p>
+                    <img src="<%= item.logo %>" alt="" width="50px">
+                    <p><%= item.company_name %></p>
+                    <p><%= item.phone %></p>
+                    <p>Job Application</p>
+                    <br>
+                    <img src="<%= data3.avatar%>" alt="" width="50px">
+                    <input type="text" name="first_name" value="<%= data.first_name%>">
+                    <input type="text" name="last_name" value="<%= data.last_name%>">
+                    <input type="text" name="country" value="<%= data.country%>">
+                    <input type="text" name="phone" value="<%=data.phone%>">
+                    <input type="hidden" name="company_id" value="<%= item.company_id %>">
+                    <input type="hidden" name="personID" value="<%= item.id %>">
+                    <a href="<%= data.cv%>">My CV</a>
+                    <input type="hidden" name="cv" value="<%= data.cv%>">
+                    <input type="submit" value="APPLY My Application">
+                </form>
+            </fieldset>
         </div>
         <% }) %>
 
-        <% data2.forEach((item) =>{ %>
-            <div>
-                <form action="" method="post">
-                    <img src="<%=item.logo%>" alt="">
-                    <p><%=item.title %></p>
-                    <p><%=item.type %></p>
-                    <p><%=item.location %></p>
-                    <p><%=item.company_name %></p>
-                    <button>Details</button>
-                </form>
-            </div>
-            <% }) %>
+        <% data2.forEach((item,index) =>{ %>
+        <div>
+            <img src="<%=item.logo%>" alt="">
+            <p><%=item.title %></p>
+            <p><%=item.type %></p>
+            <p><%=item.location %></p>
+            <p><%=item.company_name %></p>
+            <button id="api<%= index %>" onClick=reply_clickapi(this.id)>DETAILS</button>
+
+        </div>
+        <div style="display: none;" class="api<%= index %>">
+            <fieldset>
+                <button id="api<%= index %>" onClick=reply_clickapi(this.id)>X</button>
+                <p><%= item.location %></p>
+                <a href="company_url">company website</a>
+            </fieldset>
+        </div>
+        <% }) %>
 
     </div>
 </body>
