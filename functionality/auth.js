@@ -18,9 +18,19 @@ obj.login = (req, res) => {
                 res.redirect('/');
                 // console.log("User found")
             })
+            .catch(error => {
+                let errorReason = "Error | Can't update session."
+                console.log(errorReason);
+                res.status(500).render("pages/error", { data: errorReason });
+            })
         } else {
             console.log("Can't find user in database")
         }
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't find user in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 
 }
@@ -46,7 +56,22 @@ obj.personSignUp = (req, res) => {
                 obj.sessionData = session_id;
                 res.redirect('/');
             })
+            .catch(error => {
+                let errorReason = "Error | Can't insert user details in database."
+                console.log(errorReason);
+                res.status(500).render("pages/error", { data: errorReason });
+            })
         })
+        .catch(error => {
+            let errorReason = "Error | Can't select user in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
+        })
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't insert user in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 
@@ -65,7 +90,22 @@ obj.companySignUp = (req, res) => {
                 obj.sessionData = session_id;
                 res.redirect('/');
             })
+            .catch(error => {
+                let errorReason = "Error | Can't insert user details in database."
+                console.log(errorReason);
+                res.status(500).render("pages/error", { data: errorReason });
+            })
         })
+        .catch(error => {
+            let errorReason = "Error | Can't select company in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
+        })
+    })
+    .catch(error => {
+        let errorReason = "Error | Can't insert company in database."
+        console.log(errorReason);
+        res.status(500).render("pages/error", { data: errorReason });
     })
 }
 

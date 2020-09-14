@@ -69,5 +69,5 @@ INSERT INTO company (company_name,phone,company_url,logo,country,auth_id) VALUES
 INSERT INTO jobs (title,location,type,description,company_id) VALUES ('Developer','Jordan','Full Time','A full time job with 900jd salary.',1);
 INSERT INTO jobs (title,location,type,description,company_id) VALUES ('Developer','usa','Full Time (iam from database)','A full time job with 900jd salary.',1);
 
-INSERT INTO applications (status,person_id,job_id,company_id) VALUES ('waiting', 1,1,1);
-INSERT INTO job_offers (title,location,type,description,status,person_id,company_id) VALUES ('Web Dev','Jordan','Full Time','500 salary','Waiting',1,1);
+INSERT INTO applications (status,person_id,job_id,company_id) VALUES ('Pending', 1,1,1);
+INSERT INTO job_offers (title,location,type,description,status,person_id,company_id) VALUES ('Web Dev','Jordan','Full Time','500 salary','Pending',1,1);

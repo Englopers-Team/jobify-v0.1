@@ -47,9 +47,24 @@ obj.homePage = (req, res) => {
                             console.log(databaseData)
                             res.render('homepages/index_person', { data: data2.rows[0], data2: arrayData, data3: databaseData })
                         })
+                        .catch(error => {
+                            let errorReason = "Error | Can't find jobs in database."
+                            console.log(errorReason);
+                            res.status(500).render("pages/error", { data: errorReason });
+                        })
+                    })
+                    .catch(error => {
+                        let errorReason = "Error | Can't find find jobs in api."
+                        console.log(errorReason);
+                        res.status(500).render("pages/error", { data: errorReason });
                     })
                     // let SQL = `SELECT * FROM jobs WHERE title=$1 AND location=$2;`
 
+                })
+                .catch(error => {
+                    let errorReason = "Error | Can't select person details in database."
+                    console.log(errorReason);
+                    res.status(500).render("pages/error", { data: errorReason });
                 })
             } else if (account_type == 'c') {
                 let SQL = `SELECT * FROM company WHERE auth_id=$1;`
@@ -62,12 +77,30 @@ obj.homePage = (req, res) => {
                             res.render('homepages/index_company', { data: data.rows[0], data2: data2.rows, data3: data3.rows })
 
                         })
-
-
+                        .catch(error => {
+                            let errorReason = "Error | Can't find offers for this company in database."
+                            console.log(errorReason);
+                            res.status(500).render("pages/error", { data: errorReason });
+                        })
                     })
+                    .catch(error => {
+                        let errorReason = "Error | Can't find applications for this company in database."
+                        console.log(errorReason);
+                        res.status(500).render("pages/error", { data: errorReason });
+                    })
+                })
+                .catch(error => {
+                    let errorReason = "Error | Can't find company details in database."
+                    console.log(errorReason);
+                    res.status(500).render("pages/error", { data: errorReason });
                 })
 
             }
+        })
+        .catch(error => {
+            let errorReason = "Error | Can't find company details in database."
+            console.log(errorReason);
+            res.status(500).render("pages/error", { data: errorReason });
         })
     }
 
