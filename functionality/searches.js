@@ -5,6 +5,7 @@ const { client } = require('../server.js');
 const mainObj = require('../server.js')
 
 obj.searchJob = (req, res) => {
+
     const obj = require('./auth.js')
     let { title, location } = req.query
     let SQL2 = `SELECT * FROM jobs JOIN company ON jobs.company_id=company.id WHERE title=$1 AND location=$2;`
@@ -74,10 +75,10 @@ obj.applyJob = (req, res) => {
         })
 }
 
-obj.searchCompanyPage = (req, res) => {
+obj.searchCompanyPage = async (req, res) => {
     const obj = require('./auth.js')
     if (obj.sessionData == undefined) {
-        res.render("pages/searches/company-guest")
+        res.render("pages/searches/company-guest" , {ip: await mainObj.ip(req)})
     } else {
         //
         let SQL = `SELECT * FROM auth WHERE session_id=$1;`
@@ -88,8 +89,8 @@ obj.searchCompanyPage = (req, res) => {
                 let SQL = `SELECT * FROM person WHERE auth_id=$1;`
                 let Value = [id];
                 mainObj.client.query(SQL, Value)
-                    .then((resultPerson) => {
-                        res.render("pages/searches/company-user", { data: resultPerson.rows[0] })
+                    .then( async (resultPerson) => {
+                        res.render("pages/searches/company-user", { data: resultPerson.rows[0] , ip: await mainObj.ip(req) })
                     })
                     .catch(error => {
                         let errorReason = "Error | Can't select person details in database."
@@ -138,7 +139,7 @@ obj.searchCompany = (req, res) => {
 }
 
 
-obj.searchPersonPage = (req, res) => {
+obj.searchPersonPage =  (req, res) => {
 
     const obj = require('./auth.js')
 
@@ -151,8 +152,8 @@ obj.searchPersonPage = (req, res) => {
             let SQL = `SELECT * FROM company WHERE auth_id=$1;`
             let Value = [id];
             mainObj.client.query(SQL, Value)
-                .then((resultCompany) => {
-                    res.render("pages/searches/person", { data: resultCompany.rows[0] })
+                .then( async (resultCompany) => {
+                    res.render("pages/searches/person", { data: resultCompany.rows[0] , ip: await mainObj.ip(req) })
                 })
                 .catch(error => {
                     let errorReason = "Error | Can't find company details from database."

@@ -3,11 +3,11 @@
 const obj = {};
 const mainObj = require('../server.js')
 
-obj.homePage = (req, res) => {
+obj.homePage = async (req, res) => {
     const obj = require('./auth.js')
 
     if (obj.sessionData == undefined) {
-        res.render('homepages/index_guest')
+        res.render('homepages/index_guest' , {ip: await mainObj.ip(req)})
     } else {
         let SQL = `SELECT * FROM auth WHERE session_id=$1;`
         let Value = [obj.sessionData];
@@ -29,7 +29,7 @@ obj.homePage = (req, res) => {
                         })
                         let SQL = `SELECT * FROM jobs JOIN company ON jobs.company_id=company.id WHERE title=$1 AND location=$2;`
                         let Values = [job_title, country];
-                        mainObj.client.query(SQL, Values).then((data4) => {
+                        mainObj.client.query(SQL, Values).then( async (data4) => {
                             let arrayData = [];
                             for(let i = 0;i<=2;i++){
                                 if(jobData[i] == undefined){
@@ -45,7 +45,7 @@ obj.homePage = (req, res) => {
                                 }
                             }
                             console.log(databaseData)
-                            res.render('homepages/index_person', { data: data2.rows[0], data2: arrayData, data3: databaseData })
+                            res.render('homepages/index_person', { data: data2.rows[0], data2: arrayData, data3: databaseData , ip: await mainObj.ip(req) })
                         })
                         .catch(error => {
                             let errorReason = "Error | Can't find jobs in database."
