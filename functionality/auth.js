@@ -39,7 +39,7 @@ obj.login = (req, res) => {
 };
 
 obj.signupPage = async (req, res) => {
-  res.render("pages/signup", { ip: await mainObj.ip(req) });
+  res.render("pages/signup"), {ip:await mainObj.ip(req)};
 };
 
 obj.personSignUp = (req, res) => {

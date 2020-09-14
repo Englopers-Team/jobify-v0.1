@@ -15,8 +15,13 @@
             <input type="text" value="<%= item.title%>" name="title">
             <input type="text" value="<%= item.location%>" name="location">
             <select name="type">
-                <option value="full time">full time</option>
-                <option value="part time">part time</option>
+                <% if(item.type == 'Full Time'){%>
+                <option selected value="Full Time">Full Time</option>
+                <option value="Part Time">Part time</option>
+                <% }else { %>
+                <option value="Full Time">Full Time</option>
+                <option selected value="Part Time">Part time</option>
+                <% } %>
             </select>
             <input type="text" value="<%= item.description%>" name="description">
             <button type="submit">update</button></form>

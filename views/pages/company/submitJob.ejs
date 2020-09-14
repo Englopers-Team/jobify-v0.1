@@ -5,11 +5,10 @@
 <body>
     <form action="/company/jobs/submit/action" method="post">
         <input type="text" value="" name="title">
-        <input type="text" value="" name="location">
+        <input type="text" value="<%= ip%>" name="location">
         <select name="type">
-            <option selected value="full time">full time</option>
-            <option value="part time">part time</option>
-
+            <option selected value="Full Time">Full Time</option>
+            <option value="Part Time">Part Time</option>
         </select>
         <input type="text" value="" name="description">
         <input type="hidden" value="<%= data.id %>" name="id">
