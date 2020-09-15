@@ -1,8 +1,8 @@
 .searchForm {
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 80px;
     background-color: #ecf4f352;
-    padding: 100px 0;
+    padding: 80px 0;
     width: 80%;
     z-index: -1;
     border-radius: 4px;
@@ -18,10 +18,10 @@
 
 .searchForm input {
     width: 450px;
-    height: 70px;
+    height: 60px;
     border: transparent;
     border-radius: 15px;
-    font-size: 40px;
+    font-size: 33px;
     color: black;
     opacity: 0.6;
     padding: 12px 20px;
@@ -37,12 +37,12 @@
 }
 
 .searchForm input:nth-of-type(3) {
-    width: 200px;
+    width: 180px;
 }
 
 .searchBtn {
-    height: 95px;
-    width: 200px;
+    height: 85px;
+    width: 180px;
 }
 
 .searchBtn input {
@@ -55,7 +55,7 @@
     border: transparent;
     text-decoration: none;
     outline: none;
-    font-size: 40px;
+    font-size: 33px;
 }
 
 .searchBtnStyle {
