@@ -58,56 +58,118 @@
                         </div>
                     </div>
                 </form>
+
+
+                <div class="sign-up-htm">
+                    <form action="/signup/company" method="post">
+                        <div class="sign-up-htm">
+                            <div class="group">
+                                <label for="company_name" class="label">Company Name</label>
+                                <input id="company_name" class="input" required type="text" name="company_name"
+                                    value="">
+                            </div>
+
+                            <div class="group">
+                                <label for="email" class="label">Email</label>
+                                <input id="email" class="input" required type="email" name="email" value="">
+                            </div>
+
+                            <div class="group">
+                                <label for="phone" class="label">Phone No.</label>
+                                <input id="phone" class="input" required type="text" name="phone" value="">
+                            </div>
+                            <div class="group">
+                                <label for="logo_url" class="label">Logo URL</label>
+                                <input id="logo_url" class="input" required type="text" name="logo" value="">
+                            </div>
+
+                            <div class="group">
+                                <label for="company_url" class="label">Company Website</label>
+                                <input id="company_url" class="input" required type="text" name="company_url" value="">
+                            </div>
+                            <div class="group">
+                                <label for="country" class="label">Country</label>
+                                <input id="country" class="input" required type="text" name="country" value="<%=ip%>">
+                                <input required type="hidden" name="account_type" value="c">
+                                <input type="hidden" class="inputSession" name="session_id" value="">
+                            </div>
+                            <div class="group">
+                                <label for="password" class="label">Password</label>
+                                <input id="password" class="input" required type="password" name="password" value="">
+                            </div>
+
+                            <div class="group">
+                                <input type="submit" class="button signUpBtn" value="Sign Up">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
 
-            <div class="sign-up-htm">
-                <div action="/signup/company" method="post">
-                    <div class="group">
-                        <label for="company_name" class="label">Company Name</label>
-                        <input id="company_name" class="input" required type="text" name="company_name" value="">
-                    </div>
+        </div>
+    </div>
 
-                    <div class="group">
-                        <label for="email" class="label">Email</label>
-                        <input id="email" class="input" required type="email" name="email" value="">
-                    </div>
+</body>
 
-                    <div class="group">
-                        <label for="phone" class="label">Phone No.</label>
-                        <input id="phone" class="input" required type="text" name="phone" value="">
-                    </div>
-                    <div class="group">
-                        <label for="logo_url" class="label">Logo URL</label>
-                        <input id="logo_url" class="input" required type="text" name="logo" value="">
-                    </div>
 
-                    <div class="group">
-                        <label for="company_url" class="label">Company Website</label>
-                        <input id="company_url" class="input" required type="text" name="company_url" value="">
-                    </div>
-                    <div class="group">
-                        <label for="country" class="label">Country</label>
-                        <input id="country" class="input" required type="text" name="country" value="<%=ip%>">
-                        <input required type="hidden" name="account_type" value="c">
-                        <input type="hidden" class="inputSession" name="session_id" value="">
-                    </div>
-                    <div class="group">
-                        <label for="password" class="label">Password</label>
-                        <input id="password" class="input" required type="password" name="password" value="">
-                    </div>
+<script src="../js/auth.js"></script>
+<%- include("../partials/footer") %>
 
-                    <div class="group">
-                        <input type="submit" class="button signUpBtn" value="Sign Up">
-                    </div>
+</html>
+
+
+<!-- <div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <div class="group">
+                    <label for="user" class="label">Username</label>
+                    <input id="user" type="text" class="input">
                 </div>
-                </form>
-
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
+                </div>
+                <div class="group">
+                    <input id="check" type="checkbox" class="check" checked>
+                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                </div>
+                <div class="group">
+                    <input type="submit" class="button" value="Sign In">
+                </div>
+                <div class="hr"></div>
+                <div class="foot-lnk">
+                    <a href="#forgot">Forgot Password?</a>
+                </div>
+            </div>
+            <div class="sign-up-htm">
+                <div class="group">
+                    <label for="user" class="label">Username</label>
+                    <input id="user" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Repeat Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Email Address</label>
+                    <input id="pass" type="text" class="input">
+                </div>
+                <div class="group">
+                    <input type="submit" class="button" value="Sign Up">
+                </div>
+                <div class="hr"></div>
+                <div class="foot-lnk">
+                    <label for="tab-1">Already Member?</a>
+                </div>
             </div>
         </div>
     </div>
-</body>
-<%- include("../partials/footer") %>
-
-<script src="../js/auth.js"></script>
-
-</html>
+</div> -->
