@@ -1,0 +1,135 @@
+
+
+.navigation {
+  list-style: none;
+  margin: 0; 
+  height: 80px;
+  background: #68b0ab;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 240px;
+  padding: 0 0.5em;
+  text-align:center;
+  color: white;
+  line-height: 80px;
+  font-size: 24px;
+}
+
+.navigation li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.navigation a:hover {
+  background: #ff7e67;
+  color: #006a71;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  
+  .navigation a { 
+    text-align: center; 
+    padding: 10px;
+    border-top: 1px solid rgba(255,255,255,0.3); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+  }
+
+  
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+  
+}
+
+#logo{
+  height: 80px;
+  margin-left: 15px;
+}
+
+:root {
+  --dark-blue: #1c0c33;
+  --light-blue: #F8F3FE;
+  --hot-pink: #fa243c;
+  --fade-pink: #FB4D61;
+  --dark-pink: #DC001A;
+}
+
+
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.wrapper a.flat-btn {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #006a71;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #014347;
+  margin: 0 20px;
+}
+
+.wrapper a.flat-btn2{
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #ff7e67;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #b65949;
+  margin: 0 20px;
+}
+
+
+a.flat-btn:hover {
+  background-color: #ff7e67;
+  box-shadow: 0 5px 0 0 #b65949;
+}
+
+a.flat-btn2:hover {
+  background-color: #006a71;
+  box-shadow: 0 5px 0 0 #014347;
+}
+
+a.flat-btn:active {
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
+a.flat-btn2:active {
+  transform: translateY(5px);
+  box-shadow: none;
+}
