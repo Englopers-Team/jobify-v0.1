@@ -2,18 +2,20 @@
 <html lang="en">
 <%- include("../../partials/head") %>
 
-
 <body>
-    <%- include("../../partials/login") %> 
+    <%- include("../../partials/login") %>
     <%- include("../../partials/header/guest") %>
-    <p>hi iam guest</p>
     <% if(data == undefined){ %>
     <h1>Can't find any company with that name</h1>
     <% }else{ %>
-    <img src="<%= data.logo%>" alt="">
-    <a href="<%= data.email%>">Send Email</a>
-    <p><%= data.phone%></p>
-    <p><%= data.country%></p>
+    <div class="companyDetails">
+        <img src="<%= data.logo%>" alt="">
+        <p class="name"><%= data.company_name%></p>
+        <a class="curuse" href="<%= data.email%>">Send Email</a>
+        <a class="curuse" href="<%= data.url%>">Company Site</a>
+        <p><%= data.phone%></p>
+        <p><%= data.country%></p>
+    </div>
     <% } %>
     <%- include("../../partials/footer") %>
 </body>
