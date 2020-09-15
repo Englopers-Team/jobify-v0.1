@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <%- include("../partials/head") %>
 <body>
+    <%- include("../partials/header/guest") %>
+    <%- include("../partials/login") %> 
     <form action="/signup/person" method="post">
         <input required type="text" name="first_name" value="">
         <input required type="text" name="last_name" value="">
         <input required type="email" name="email" value="">
         <input required type="text" name="phone" value="">
         <input required type="text" name="job_title" value="">
-        <input required type="text" name="country" value="<%= ip%>">
+        <input required type="text" name="country" value="<%=ip%>">
         <input required type="hidden" name="account_type" value="p">
         <input type="hidden" class="inputSession" name="session_id" value="">
         <input required type="password" name="password" value="">
@@ -20,7 +22,7 @@
         <input required type="text" name="email" value="">
         <input required type="text" name="phone" value="">
         <input required type="text" name="logo" value="">
-        <input required type="text" name="country" value="<%= ip%>">
+        <input required type="text" name="country" value="<%=ip%>">
         <input required type="text" name="company_url" value="">
         <input required type="hidden" name="account_type" value="c">
         <input type="hidden" class="inputSession" name="session_id" value="">
@@ -28,7 +30,6 @@
         <button>Sign up</button>
     </form>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<%- include("../partials/footer") %>
 <script src="../js/auth.js"></script>
-
 </html>

@@ -3,6 +3,7 @@
 <%- include("../../partials/head") %>
 
 <body>
+    <%- include("../../partials/header/person") %>
     <form action="/person/edit/update?_method=put" method="post">
         <input type="text" name="first_name" value="<%= data.first_name %>">
         <input type="text" name="last_name" value="<%= data.last_name %>">

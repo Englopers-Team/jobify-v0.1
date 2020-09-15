@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Document</title>
-</head>
-
-<body><% data1.forEach((item,index)=>{ %>.
+<%- include("../../partials/head") %>
+<body>
+    <%- include("../../partials/header/person") %>
+    
+    <% data1.forEach((item,index)=>{ %>.
     <img src="<%= item.logo %>" alt="" width="50px">
     <h3><%= item.title %></h3>
     <p><%= item.type %></p>
@@ -54,9 +53,7 @@
     </div>
     <%})%>
 
-    <% console.log(data3) %>
+    <%- include("../../partials/footer") %>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="../js/showDetails.js"></script>
 
 </html>

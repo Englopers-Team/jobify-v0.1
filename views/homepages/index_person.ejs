@@ -3,22 +3,7 @@
 <%- include("../partials/head") %>
 
 <body>
-    <form action="/search/company" method="get">
-        <button>Company</button>
-    </form>
-    <form action="/person/apps" method="get">
-        <button>my apps</button>
-    </form>
-    <form action="/person/offers" method="get">
-        <button>my offers</button>
-    </form>
-    <form action="/person/edit" method="get">
-        <button>Edit Profile</button>
-    </form>
-    <button><a href="/logout">logout</a></button>
-    <% console.log("data:", data) %>
-    <% console.log("data2:",data2) %>
-    <% console.log("data3",data3) %>
+    <%- include("../partials/header/person") %>
 
     <form action="/search/job" method="get">
         <input type="text" name="title" value="">

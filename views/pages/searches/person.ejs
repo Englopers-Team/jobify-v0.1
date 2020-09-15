@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
+    <%- include("../../partials/head") %>
 <body>
+    <%- include("../../partials/header/company") %>
     <form action="/search/person/search" method="get">
         <input type="text" name="job_title" value="">
         <input type="text" name="country" value="<%= ip%>">
         <button>SEARCH</button>
     </form>
+    <%- include("../../partials/footer") %>
 </body>
 
 </html>

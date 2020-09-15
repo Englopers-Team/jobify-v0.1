@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include("../../partials/head") %>
+
+
 
 <body>
+    <%- include("../../partials/login") %> 
+    <%- include("../../partials/header/guest") %>
     <% data1.forEach((item,index)=>{ %>.
     <img src="<%= item.logo %>" alt="" width="50px">
     <h3><%= item.title %></h3>
     <p><%= item.type %></p>
     <p><%= item.company_name %></p>
     <p><%= item.country %></p>
-    <button onClick="signup()" >APPLY</button>
+    <button onClick="signup()">APPLY</button>
     <%})%>
 
     <% data2.forEach(item=>{ %>.
@@ -22,7 +22,7 @@
     <h3><%= item.title %></h3>
     <p><%= item.type %></p>
     <p><%= item.company_name %></p>
-    <button onClick="signup()" >DETAILS</button>
+    <button onClick="signup()">DETAILS</button>
     <%})%>
 
     <div style="display: none;" id="signup">
@@ -33,12 +33,8 @@
         </form>
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="../js/showDetails.js"></script>
-    <% console.log(data1) %>
-    <% console.log(data2) %>
 
-
+<%- include("../../partials/footer") %>
 </body>
 
 </html>

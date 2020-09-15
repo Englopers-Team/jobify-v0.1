@@ -4,17 +4,22 @@
 
 <body>
     <%- include("../partials/header/guest") %>
-    <form action="/search/company" method="get">
-        <button>Company</button>
-    </form>
-    <%- include("../partials/login") %>
-    <form action="/search/job" method="get">
-        <input type="text" name="title" value="">
-        <input type="text" name="location" value="<%= ip%>">
-        <button>Search</button>
-    </form>
-
+    <%- include("../partials/login") %> 
+    <h1 id="Title">Find the Job you Love</h1>
+    <hr id="hrTitle">
+    <div class="searchForm">
+        <form class="mainFlex" action="/search/job" method="get">
+            <div id="searchBoxes">
+                <input type="text" name="title" value="" placeholder="Job Title">
+                <input type="text" name="session_id" value="<%= ip%>">
+                <input type="text" name="location" value="<%= ip%>" placeholder="Country">
+            </div>
+            <div class="searchBtn">
+                <input class="searchBtnStyle" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
 </body>
 <%- include("../partials/footer") %>
-
+<script src="../js/auth.js"></script>
 </html>

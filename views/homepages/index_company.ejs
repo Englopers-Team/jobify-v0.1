@@ -4,19 +4,7 @@
 <% console.log(data,data2,data3) %>
 
 <body>
-    <form action="/company/jobs" method="get">
-        <button>my jobs</button>
-    </form>
-    <form action="/company/jobs/submit" method="get">
-        <button>submit job</button>
-    </form>
-    <form action="/company/edit" method="get">
-        <button>edit company</button>
-    </form>
-    <button><a href="/logout">logout</a></button>
-    <form action="/search/person" method="GET">
-        <button> search person</button>
-    </form>
+    <%- include("../partials/header/company") %>
     <div>
         <div>
             <h1>Applications</h1>
@@ -48,6 +36,9 @@
             </form>
         </div>
         <% }) %>
+        <div>
+            <h1>Offers</h1>
+        </div>
         <% data3.forEach(item =>{ %>
         <div>
             <form action="/company/offer/delete/<%=item.id %>?_method=delete" method="post">

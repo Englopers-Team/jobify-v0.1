@@ -30,7 +30,7 @@ obj.searchJob = (req, res) => {
                                 let Value = [id];
                                 mainObj.client.query(SQL, Value)
                                     .then((resultPerson) => {
-                                        res.render("pages/searches/job-user", { data1: resultDataBase.rows, data2: jobData, data3: resultPerson.rows[0] })
+                                        res.render("pages/searches/job-user", { data1: resultDataBase.rows, data2: jobData, data: resultPerson.rows[0] })
                                     })
                                     .catch(error => {
                                         let errorReason = "Error | Can't select person details in database."
@@ -121,7 +121,7 @@ obj.searchCompany = (req, res) => {
                 let Value = [id];
                 mainObj.client.query(SQL, Value)
                     .then(personData => {
-                        res.render("pages/searches/searchCompanyResult-user", { data: result.rows[0], data2: personData.rows[0] })
+                        res.render("pages/searches/searchCompanyResult-user", { data1: result.rows[0], data: personData.rows[0] })
                     })
                     .catch(error => {
                         let errorReason = "Error | Can't find person details in database."
@@ -186,7 +186,7 @@ obj.searchPerson = (req, res) => {
                     let values = [job_title, country];
                     mainObj.client.query(SQL, values)
                         .then((result) => {
-                            res.render("pages/searches/personResults", { data: result.rows, data2: resultCompany.rows[0] })
+                            res.render("pages/searches/personResults", { data1: result.rows, data: resultCompany.rows[0] })
                         })
                         .catch(error => {
                             let errorReason = "Error | Can't find person with specific data in database."

@@ -12,3 +12,7 @@ function reply_clickapi(clicked_id){
 function signup(){
     $("#signup").toggle()
 }
+
+$(".avatarDiv").click(function(){
+    $(".dropdownMenu").toggleClass("dropdownMenuActive").slow();
+  });
