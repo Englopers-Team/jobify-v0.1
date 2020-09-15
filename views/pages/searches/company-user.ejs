@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../../partials/head") %>
+
 <body>
     <%- include("../../partials/header/person") %>
     <% console.log(data)%>
-    <p>Iam user</p>
-    <form action="/search/company/result" method="get">
+    <!-- <form action="/search/company/result" method="get">
         <input type="text" name="company_name" value="">
         <input type="text" name="country" value="<%= ip%>">
         <button>Search</button>
-    </form>
+    </form> -->
+    <div class="searchForm">
+        <form class="mainFlex" action="/search/company/result" method="get">
+            <div id="searchBoxes">
+                <input type="text" name="company_name" value="" placeholder="Company name">
+                <input type="text">
+                <input type="text" name="country" value="<%= ip%>" placeholder="Country">
+            </div>
+            <div class="searchBtn">
+                <input class="searchBtnStyle" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
     <%- include("../../partials/footer") %>
 </body>
 
