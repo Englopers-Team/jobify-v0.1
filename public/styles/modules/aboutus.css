@@ -1,0 +1,90 @@
+* {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  .flip-box {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    margin-left: 25%;
+  }
+  .flip-box-front img {
+    object-fit: cover;
+    border-radius: 50%;
+    /* border: black solid 1px; */
+  }
+  .flip-box-back img {
+    width: 60px;
+    height: 60px;
+  }
+  .flip-box-back h3 {
+    font-family: "Cairo", sans-serif;
+    font-size: 30px;
+    color: whitesmoke;
+    margin-top: 30%;
+    font-weight: bold;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-box-front,
+  .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-box-front {
+    background-color: transparent;
+    color: black;
+  }
+  
+  .flip-box-back {
+    background-color: #393d48;
+    color: white;
+    transform: rotateY(180deg);
+    border-radius: 50%;
+  }
+  #nav-container-black {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #393d48;
+  }
+  
+
+  .ourPictures {
+    width: 100%;
+    padding: 3%;
+  }
+  .teamMemberPic {
+    width: 40%;
+    display: inline-block;
+    text-align: center !important ;
+    margin-bottom: 10%;
+  }
+
+  #jobify-logo{
+      display: flex;
+      justify-content: center;
+
+  }
