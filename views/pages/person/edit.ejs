@@ -4,7 +4,8 @@
 
 <body>
     <%- include("../../partials/header/person") %>
-    <form action="/person/edit/update?_method=put" method="post">
+    <h1 id="Title"><%= data.first_name %>!! You can edit your data here </h1>
+    <!-- <form action="/person/edit/update?_method=put" method="post">
         <input type="text" name="first_name" value="<%= data.first_name %>">
         <input type="text" name="last_name" value="<%= data.last_name %>">
         <input type="text" name="phone" value="<%= data.phone %>">
@@ -16,7 +17,74 @@
         <input type="text" name="cv" value="<%= data.cv %>">
         <input type="hidden" name="id" value="<%= data.id %>">
         <button>Edit</button>
-    </form>
+    </form> -->
+    <div class="login-wrap-edit-person">
+        <div class="login-html-edit-person">
+            <input id="tab-1" type="hidden" name="tab" class="sign-in" checked><label for="tab-1" class="tab"></label>
+            <input id="tab-2" type="hidden" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+            <div class="login-form">
+                <form action="/person/edit/update?_method=put" method="post">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="user" class="label">First Name</label>
+                            <input id="user" class="input" required type="text" name="first_name"
+                                value="<%= data.first_name %>" placeholder="Please enter your first name">
+                        </div>
+                        <div class="group">
+                            <label for="lastName" class="label">Last Name</label>
+                            <input id="LastName" class="input" required type="text" name="last_name"
+                                value="<%= data.last_name %>" placeholder="Please enter your last name">
+                        </div>
+                        <div class="group">
+                            <label for="phone" class="label">Phone No.</label>
+                            <input id="phone" class="input" required type="text" name="phone" value="<%= data.phone %>"
+                                placeholder="Please enter your phone number">
+                        </div>
+                        <div class="group">
+                            <label for="job_title" class="label">Job Title</label>
+                            <input id="job_title" class="input" required type="text" name="job_title"
+                                value="<%= data.job_title %>" placeholder="Please enter the job title of yours">
+                        </div>
+                        <div class="group">
+                            <label for="age" class="label">Age</label>
+                            <input id="age" class="input" required type="text" name="age" value="<%= data.age %>"
+                                placeholder="Please enter your age">
+                        </div>
+                        <div class="group">
+                            <label for="avatar" class="label">Image URL</label>
+                            <input id="avatar" class="input" required type="text" name="avatar"
+                                value="<%= data.avatar %>" placeholder="Please enter your Image URL">
+                        </div>
+                        <div class="group">
+                            <label for="experince" class="label">experience</label>
+                            <input id="experince" class="input" required type="text" name="experince"
+                                value="<%= data.experince %>" placeholder="Please enter your years of experience">
+                        </div>
+                        <div class="group">
+                            <label for="cv" class="label">CV link</label>
+                            <input id="cv" class="input" required type="text" name="cv" value="<%= data.cv %>"
+                                placeholder="Please enter a link for your CV">
+                        </div>
+                        <div class="group">
+                            <label for="country" class="label">Country</label>
+                            <input id="country" class="input" required type="text" name="country"
+                                value="<%=data.country%>" placeholder="Please enter your country name">
+                            <input type="hidden" name="id" value="<%= data.id %>">
+                        </div>
+                        <div class="group">
+                            <label for="password" class="label">Password</label>
+                            <input id="password" class="input" required type="password" name="password" value=""
+                                placeholder="Please enter your password">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button signUpBtn" value="Update">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 <%- include("../../partials/footer") %>
+
 </html>
