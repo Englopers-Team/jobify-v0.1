@@ -1,0 +1,91 @@
+
+.companyHomepage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.application , .offers {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    border: 2px solid  white;
+    margin: 50px auto;
+}
+.applicationForm  , .offersForm{
+    margin: 20px;
+}
+
+.applicationForm form , .offersForm form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0 20px;
+    background-color: rgba(0, 0, 0, 0.144);
+    height: 50px;
+}
+.applicationForm form  .name, .offersForm form .name{
+    width: 14% !important;
+}
+.applicationForm form  > *, .offersForm form > * {
+    margin: 0 20px;
+    width: 8%;
+    color: white;
+    font-size: large;
+    line-height: 50px;
+
+
+}
+
+.applicationForm form img, .offersForm form img{
+    width: 50px ;
+    height: 50px ;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.applicationForm form p a, .offersForm form p a{
+    color: white;
+    text-decoration: none;
+}
+.applicationForm form p a:hover, .offersForm form p a:hover{
+    color:#ff7e67 ;
+    cursor: pointer;
+}
+.applicationForm form select, .offersForm form select{
+    background-color: #006a71;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    width: 13% !important;
+}
+.applicationForm form select option, .offersForm form select option{
+    background-color: #006a71;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    width: 13% !important;
+
+}
+.applicationForm form button , .offersForm form button {
+    background-color: #006a71;
+    color: white;
+    border-radius:5px ;
+}
+.applicationForm form button:hover , .offersForm form button:hover{
+    color: #ff7e67 ;
+    cursor: pointer;
+    box-shadow: 1.8px 1.8px rgb(167, 166, 166);
+}
+.formHeader{
+    font-size: 25px;
+    margin: 15px;
+    padding: 10px 20px;
+}
+.formHeader h1 {
+    color: white;
+}

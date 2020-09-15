@@ -95,18 +95,12 @@ mainObj.ip = (req) => {
     req.socket.remoteAddress ||
     (req.connection.socket ? req.connection.socket.remoteAddress : null);
   ip = ip.slice(7, ip.length);
-  if(ip== ""){
-    ip = "127.0.0.1"
-  }
   let URL = `https://api.ip2country.info/ip?${ip}`;
   return mainObj.superagent.get(URL).then((data) => {
     if (data.body.countryName == "") {
       return "Jordan";
     } else return data.body.countryName;
-  })
-  .catch(()=>{
-    console.log("error API || ip ")
-  })
+  });
 };
 
 mainObj.client.connect().then(() => {
