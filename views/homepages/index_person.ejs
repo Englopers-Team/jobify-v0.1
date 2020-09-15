@@ -66,9 +66,9 @@
                 <button class="jobBtn" id="api<%= index %>" onClick=reply_clickapi(this.id)>DETAILS</button>
 
             </div>
-            <div style="display: none;" class="api<%= index %>">
+            <div style="display: none;" class="api<%= index %> detailsForm">
                 <fieldset>
-                    <button id="api<%= index %>" onClick=reply_clickapi(this.id)>X</button>
+                    <button class="close" id="api<%= index %>" onClick=reply_clickapi(this.id)>Close form</button>
                     <p><%= item.location %></p>
                     <a href="<%= item.company_url %>">company website</a>
                 </fieldset>

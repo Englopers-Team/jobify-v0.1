@@ -121,6 +121,8 @@
     background-color: rgba(0, 0, 0, 0.144);
     height: 50px;
     margin-top: 20px;
+    margin-bottom: 20px;
+
     
 
 }
@@ -223,4 +225,19 @@ font-size: 20px;
     color: #ff7e67 ;
     cursor: pointer;
     box-shadow: 1.8px 1.8px rgb(167, 166, 166);
+}
+.detailsForm fieldset p,.detailsForm fieldset a{
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.detailsForm fieldset a{
+    margin-top: 20px !important;
+
+}
+.detailsForm fieldset a:hover{
+    color: #ff7e67;
+    cursor: pointer;
 }
