@@ -11,62 +11,70 @@
         <button>Search</button>
     </form>
 
-    <div>
-        <div>
-            <h2>Recommanded Jobs: <%= data2.length%></h2>
+    <div class="main-div">
+
+        <div class="header-dev">
+            <h2>Recommanded Jobs: <%= data3.length + data2.length%></h2>
         </div>
-        <% data3.forEach((item,index) =>{ %>
-        <div>
-            <img src="<%=item.logo%>" alt="">
-            <p><%=item.title %></p>
-            <p><%=item.type %></p>
-            <p><%=item.location %></p>
-            <p><%=item.company_name %></p>
-            <button id="id<%= index %>" onClick=reply_click(this.id)>Apply</button>
-        </div>
-        <div style="display: none;" class="dbid<%= index %>">
-            <fieldset>
-                <button id="id<%= index %>" onClick=reply_click(this.id)>X</button>
-                <form action="/search/job/apply/<%=item.id%>" method="POST">
-                    <p>company INFO</p>
-                    <img src="<%= item.logo %>" alt="" width="50px">
-                    <p><%= item.company_name %></p>
-                    <p><%= item.phone %></p>
-                    <p>Job Application</p>
-                    <br>
-                    <img src="<%= data3.avatar%>" alt="" width="50px">
-                    <input type="text" name="first_name" value="<%= data.first_name%>">
-                    <input type="text" name="last_name" value="<%= data.last_name%>">
-                    <input type="text" name="country" value="<%= data.country%>">
-                    <input type="text" name="phone" value="<%=data.phone%>">
-                    <input type="hidden" name="company_id" value="<%= item.company_id %>">
-                    <input type="hidden" name="personID" value="<%= item.id %>">
-                    <a href="<%= data.cv%>">My CV</a>
-                    <input type="hidden" name="cv" value="<%= data.cv%>">
-                    <input type="submit" value="APPLY My Application">
+        <div class="dbInfo">
+            <% data3.forEach((item,index) =>{ %>
+            <div class="suggJobs">
+                <img src="<%=item.logo%>" alt="">
+                <p class="title"><%=item.title %></p>
+                <p class="type"><%=item.type %></p>
+                <p><%=item.location %></p>
+                <p><%=item.company_name %></p>
+                <button class="jobBtn" id="id<%= index %>" onClick=reply_click(this.id)>Apply</button>
+            </div>
+            <div style="display: none;" class="dbid<%= index %> ">
+
+                <button class="close" id="id<%= index %>" onClick=reply_click(this.id)>Close the form</button>
+                <form action="/search/job/apply/<%=item.id%>" method="POST" class="applyForm">
+                    <div class="info">
+                        <p>company INFO</p>
+                        <img src="<%= item.logo %>" alt="" width="50px">
+                        <p><%= item.company_name %></p>
+                        <p><%= item.phone %></p>
+                        <p>Job Application</p>
+                    </div>
+                    <div class="form">
+                        <img src="<%= data3.avatar%>" alt="" width="50px">
+                        <input type="text" name="first_name" value="<%= data.first_name%>">
+                        <input type="text" name="last_name" value="<%= data.last_name%>">
+                        <input type="text" name="country" value="<%= data.country%>">
+                        <input type="text" name="phone" value="<%=data.phone%>">
+                        <input type="hidden" name="company_id" value="<%= item.company_id %>">
+                        <input type="hidden" name="personID" value="<%= item.id %>">
+                        <a href="<%= data.cv%>">My CV</a>
+                        <input type="hidden" name="cv" value="<%= data.cv%>">
+                        <input class="sub" type="submit" value="APPLY My Application">
+                    </div>
                 </form>
-            </fieldset>
-        </div>
-        <% }) %>
 
-        <% data2.forEach((item,index) =>{ %>
-        <div>
-            <img src="<%=item.logo%>" alt="">
-            <p><%=item.title %></p>
-            <p><%=item.type %></p>
-            <p><%=item.location %></p>
-            <p><%=item.company_name %></p>
-            <button id="api<%= index %>" onClick=reply_clickapi(this.id)>DETAILS</button>
+            </div>
+            <% }) %>
+        </div>
+        <div class="apiInfo">
+            <% console.log(data2)%>
+            <% data2.forEach((item,index) =>{ %>
+            <div class="suggJobs">
+                <img src="<%=item.logo%>" alt="">
+                <p class="title"><%=item.title %></p>
+                <p class="type"><%=item.type %></p>
+                <p><%=item.location %></p>
+                <p>CLICK DETAILS </p>
+                <button class="jobBtn" id="api<%= index %>" onClick=reply_clickapi(this.id)>DETAILS</button>
 
+            </div>
+            <div style="display: none;" class="api<%= index %>">
+                <fieldset>
+                    <button id="api<%= index %>" onClick=reply_clickapi(this.id)>X</button>
+                    <p><%= item.location %></p>
+                    <a href="<%= item.company_url %>">company website</a>
+                </fieldset>
+            </div>
+            <% }) %>
         </div>
-        <div style="display: none;" class="api<%= index %>">
-            <fieldset>
-                <button id="api<%= index %>" onClick=reply_clickapi(this.id)>X</button>
-                <p><%= item.location %></p>
-                <a href="<%= item.company_url %>">company website</a>
-            </fieldset>
-        </div>
-        <% }) %>
 
     </div>
 </body>
