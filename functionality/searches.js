@@ -121,7 +121,7 @@ obj.searchCompany = (req, res) => {
                 let Value = [id];
                 mainObj.client.query(SQL, Value)
                     .then(personData => {
-                        res.render("pages/searches/searchCompanyResult-user", { data1: result.rows[0], data: personData.rows[0] })
+                        res.render("pages/searches/searchCompanyResult-user", { data: result.rows[0], data1: personData.rows[0] })
                     })
                     .catch(error => {
                         let errorReason = "Error | Can't find person details in database."
