@@ -1,4 +1,4 @@
-
+/* --------------------------company home page---------------------------- */
 .companyHomepage{
     width: 100%;
     display: flex;
@@ -88,4 +88,134 @@
 }
 .formHeader h1 {
     color: white;
+}
+/* --------------------------person home page---------------------------- */
+.main-div{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    border: 2px solid  white;
+    margin: 50px auto;
+}
+.header-dev{
+    font-size: 25px;
+    margin: 15px;
+    padding: 10px 20px;
+}
+.header-dev h2{
+    color: white;
+}
+
+.dbInfo ,.apiInfo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.suggJobs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0 20px;
+    background-color: rgba(0, 0, 0, 0.144);
+    height: 50px;
+    margin-top: 20px;
+    
+
+}
+.suggJobs > *{
+    width: 10%;
+    margin: 0 20px;
+    color: white;
+    font-size: large;
+    line-height: 50px;
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.suggJobs .title, .suggJobs .type{
+    /* width: 18% !important; */
+    
+}
+.suggJobs img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+.suggJobs .jobBtn{
+    background-color: #006a71;
+    color: white;
+    border-radius:5px ;
+}
+.suggJobs .jobBtn:hover{
+    color: #ff7e67 ;
+    cursor: pointer;
+    box-shadow: 1.8px 1.8px rgb(167, 166, 166);
+
+}
+
+.applyForm{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0 20px;
+    background-color: rgba(0, 0, 0, 0.144);
+    height: 50px;
+    margin-top: 20px;
+
+}
+.info > *{
+    color: white;
+    font-size: 20px;
+
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 20%;
+    margin: 0 auto;
+}
+.form > *{
+margin: 10px;
+padding: 10px 20px;
+background-color: #006a71;
+color: white;
+border-radius:5px ;
+font-size: 20px;
+
+
+}
+.form a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+.form a:hover{
+    color: #ff7e67;
+    cursor: pointer;
+}
+.close{
+    background-color: #006a71;
+    color: white;
+    border-radius:5px ;
+    margin-top: 15px;
+    font-size: 20px;
+    padding: 10px 20px;
+
+}
+.close:hover{
+    color: #ff7e67 ;
+    cursor: pointer;
+    box-shadow: 1.8px 1.8px rgb(167, 166, 166);
 }
