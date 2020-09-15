@@ -4,11 +4,11 @@
 
 <body>
     <%- include("../../partials/header/person") %>
-    
+
     <% console.log("data2",data2)%>
     <div>
         <%data2.forEach(item=>{%>
-        <div>
+        <div class="myApp">
             <img src="<%= item.logo%>" alt="">
             <h3><%= item.title%></h3>
             <p><%= item.staus%></p>
