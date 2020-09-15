@@ -201,6 +201,11 @@ font-size: 20px;
     font-size: 20px;
     text-decoration: none;
 }
+.form .sub:hover{
+    color: #ff7e67 ;
+    cursor: pointer;
+    box-shadow: 1.8px 1.8px rgb(167, 166, 166);
+}
 .form a:hover{
     color: #ff7e67;
     cursor: pointer;
