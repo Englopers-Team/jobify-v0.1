@@ -5,52 +5,60 @@
 
 <body>
     <%- include("../partials/header/company") %>
-    <div>
-        <div>
-            <h1>Applications</h1>
-        </div>
-        <% data2.forEach(item =>{ %>
-        <div>
-            <form action="/company/apps/answer/<%=item.id%>?_method=put" method="post">
-                <img src="<%=item.avatar%>" alt="">
-                <p><%= item.first_name %> <%= item.last_name %></p>
-                <p><%= item.title %></p>
-                <p><%= item.experince %></p>
-                <p><a href="<%= item.cv %>">CV Link</a></p>
-                <select name="status">
-                    <% if(item.status == 'Pending'){ %>
-                    <option selected value="Pending">Pending</option>
-                    <option value="Accepted">Accepted</option>
-                    <option value="Rejected">Rejected</option>
-                    <% }else if(item.status == 'Accepted'){ %>
-                    <option value="Pending">Pending</option>
-                    <option selected value="Accepted">Accepted</option>
-                    <option value="Rejected">Rejected</option>
-                    <% } else{ %>
-                    <option value="Pending">Pending</option>
-                    <option value="Accepted">Accepted</option>
-                    <option selected value="Rejected">Rejected</option>
-                    <% } %>
-                </select>
-                <button>Update Status</button>
-            </form>
-        </div>
-        <% }) %>
-        <div>
-            <h1>Offers</h1>
-        </div>
-        <% data3.forEach(item =>{ %>
-        <div>
-            <form action="/company/offer/delete/<%=item.id %>?_method=delete" method="post">
-                <img src="<%= item.avatar%>" alt="">
-                <p><%= item.first_name%> <%= item.last_name%></p>
-                <p><%= item.title%></p>
-                <p><%= item.type%></p>
-                <p><%= item.status%></p>
-                <button>Delete</button>
-            </form>
-        </div>
-        <%})%>
+    <div class="companyHomepage">
+        <section class="application">
+            <div class="formHeader">
+                <h1>Applications: <%= data2.length%></h1>
+            </div>
+            <% data2.forEach(item =>{ %>
+            <div class="applicationForm">
+                <form action="/company/apps/answer/<%=item.id%>?_method=put" method="post">
+                    <img src="<%=item.avatar%>" alt="">
+                    <p class="name"><%= item.first_name %> <%= item.last_name %></p>
+                    <p><%= item.title %></p>
+                    <% if(item.experince == null){ %>
+                    <p>-</p>
+                    <%}else{%>
+                    <p><%= item.experince %> years</p>
+                    <%}%>
+                    <p><a href="<%= item.cv %>">CV Link</a></p>
+                    <select name="status">
+                        <% if(item.status == 'Pending'){ %>
+                        <option selected value="Pending">Pending</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="Rejected">Rejected</option>
+                        <% }else if(item.status == 'Accepted'){ %>
+                        <option value="Pending">Pending</option>
+                        <option selected value="Accepted">Accepted</option>
+                        <option value="Rejected">Rejected</option>
+                        <% } else{ %>
+                        <option value="Pending">Pending</option>
+                        <option value="Accepted">Accepted</option>
+                        <option selected value="Rejected">Rejected</option>
+                        <% } %>
+                    </select>
+                    <button>Update</button>
+                </form>
+            </div>
+            <% }) %>
+        </section>
+        <section class="offers">
+            <div class="formHeader">
+                <h1>Offers: <%= data3.length%></h1>
+            </div>
+            <% data3.forEach(item =>{ %>
+            <div class="offersForm">
+                <form action="/company/offer/delete/<%=item.id %>?_method=delete" method="post">
+                    <img src="<%= item.avatar%>" alt="">
+                    <p><%= item.first_name%> <%= item.last_name%></p>
+                    <p><%= item.title%></p>
+                    <p><%= item.type%></p>
+                    <p><%= item.status%></p>
+                    <button>Delete</button>
+                </form>
+            </div>
+            <%})%>
+        </section>
     </div>
 </body>
 <%- include("../partials/footer") %>
