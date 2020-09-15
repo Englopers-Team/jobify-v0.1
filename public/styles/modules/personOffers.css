@@ -1,0 +1,61 @@
+.offers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 100px auto 20px;
+    background-color: rgba(0, 0, 0, 0.144);
+    height: 50px;
+    width: 80%;
+    
+}
+.offers img{
+    width: 50px ;
+    height: 50px ;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+.offers > *{
+    margin: 0 20px;
+    color: white;
+    font-size: large;
+    line-height: 50px;
+
+}
+.OffersForm > *{
+    margin: 0 20px;
+    color: white;
+    font-size: large;
+    line-height: 50px;
+
+
+}
+.offers form select{
+    background-color: #006a71;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    /* width: 13% !important; */
+}
+.offers form select option {
+    background-color: #006a71;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    /* width: 13% !important; */
+
+}
+.offers form button  {
+    background-color: #006a71;
+    color: white;
+    border-radius:5px ;
+    line-height: 30px !important;
+}
+.offers form button:hover {
+    color: #ff7e67 ;
+    cursor: pointer;
+    box-shadow: 1.8px 1.8px rgb(167, 166, 166);
+}
