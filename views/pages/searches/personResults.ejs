@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../../partials/head") %>
+
 <body>
     <%- include("../../partials/header/company") %>
     <% data1.forEach(item=>{%>
@@ -11,7 +12,7 @@
     <a href="<%= item.cv%>">Cv</a>
     <form action="/search/person/offer" method="POST">
         <input type="hidden" name="person_id" value="<%= item.id%>">
-        <input type="hidden" name="company_id" value="<%= data2.id%>">
+        <input type="hidden" name="company_id" value="<%= data.id%>">
         <button>SEND OFFER</button>
 
     </form>

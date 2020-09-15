@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <%- include("../../partials/head") %>
+
 <body>
     <%- include("../../partials/header/person") %>
-    
+
     <% data1.forEach((item,index)=>{ %>.
     <img src="<%= item.logo %>" alt="" width="50px">
     <h3><%= item.title %></h3>
@@ -21,15 +22,15 @@
                 <p><%= item.phone %></p>
                 <p>Job Application</p>
                 <br>
-                <img src="<%= data3.avatar%>" alt="" width="50px">
-                <input type="text" name="first_name" value="<%= data3.first_name%>">
-                <input type="text" name="last_name" value="<%= data3.last_name%>">
-                <input type="text" name="country" value="<%= data3.country%>">
-                <input type="text" name="phone" value="<%=data3.phone%>">
+                <img src="<%= data.avatar%>" alt="" width="50px">
+                <input type="text" name="first_name" value="<%= data.first_name%>">
+                <input type="text" name="last_name" value="<%= data.last_name%>">
+                <input type="text" name="country" value="<%= data.country%>">
+                <input type="text" name="phone" value="<%=data.phone%>">
                 <input type="hidden" name="company_id" value="<%= item.company_id %>">
-                <input type="hidden" name="personID" value="<%= data3.id %>">
-                <a href="<%= data3.cv%>">My CV</a>
-                <input type="hidden" name="cv" value="<%= data3.cv%>">
+                <input type="hidden" name="personID" value="<%= data.id %>">
+                <a href="<%= data.cv%>">My CV</a>
+                <input type="hidden" name="cv" value="<%= data.cv%>">
                 <input type="submit" value="APPLY My Application">
             </form>
         </fieldset>
