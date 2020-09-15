@@ -7,9 +7,8 @@
     z-index: 99;
     float: left;
     display: none;
-	/* transition: none */
-    overflow-y: unset;
-
+	transition: none;
+    overflow-y: none;
 	
 }
 
@@ -19,10 +18,10 @@
     box-shadow: 0px 3px 20px #000;
     display: none;
     transition: none;
-    background: #fff;
-    width: 400px;
-    height: 400px;
-	padding: 30px 80px 30px 30px;
+	background: #fff;
+    min-width: 600px;
+    min-height: 600px;
+	padding: 30px 80px 80px 80px;
 	
 
 }
