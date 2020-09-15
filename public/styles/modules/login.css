@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
 
 #js-lightbox-bg {
     background: rgba(0, 0, 0, 0.5) repeat;
@@ -8,20 +7,21 @@
     z-index: 99;
     float: left;
     display: none;
-    transition: none
+	transition: none;
+    overflow-y: none;
+	
 }
 
 #js-lightbox-main {
     position: fixed;
-    overflow: hidden;
     z-index: 999;
     box-shadow: 0px 3px 20px #000;
     display: none;
     transition: none;
-    background: #fff;
-    width: 400px;
-    height: 385px;
-	padding: 30px 80px 30px 30px;
+	background: #fff;
+    min-width: 600px;
+    min-height: 600px;
+	padding: 30px 80px 80px 80px;
 	
 
 }
@@ -37,7 +37,7 @@
 #js-lightbox-main .panel .panel-heading {
     padding: 0;
     background: #006a71;
-    padding: 10px 0
+	padding: 10px 0;	
 }
 
 #js-lightbox-main .panel .panel-title {
@@ -89,7 +89,7 @@
 	width:100%;
 	outline:none;
 	border:1px solid #bbb;
-	border-radius:20px;
+	border-radius:5px;
 	display:inline-block;
 	-webkit-box-sizing:border-box;
 	   -moz-box-sizing:border-box;
@@ -149,7 +149,6 @@
 #logoo {
 	margin:0 auto;
 	width:200px;
-	font-family:'Lily Script One', cursive;
 	font-size:60px;
 	font-weight:bold;
 	text-align:center;

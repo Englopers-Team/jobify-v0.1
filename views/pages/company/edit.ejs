@@ -2,9 +2,10 @@
 <html lang="en">
 <%- include("../../partials/head") %>
 <% console.log(data) %>
+
 <body>
     <%- include("../../partials/header/company") %>
-    <form action="/company/edit/update?_method=put" method="post">
+    <!-- <form action="/company/edit/update?_method=put" method="post">
         <input type="text" value="<%= data.company_name %>" name="company_name">
         <input type="text" value="<%= data.phone %>" name="phone">
         <input type="text" value="<%= data.logo %>" name="logo">
@@ -12,8 +13,51 @@
         <input type="text" value="<%= data.company_url %>" name="company_url">
         <input type="hidden" value="<%= data.id %>" name="id">
         <button type="submit">submit</button>
-    </form>
+    </form> -->
+    <h1 id="Title">Company Edit</h1>
+    <div class="login-wrap companyedit">
+        <div class="login-html login-html2">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"></label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+            <div class="login-form">
+                <form action="/company/edit/update?_method=put" method="post">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="company_name" class="label">Company Name</label>
+                            <input id="company_name" class="input" required type="text" name="company_name"
+                                placeholder="Company Name" value="<%= data.company_name %>">
+                        </div>
+                        <div class="group">
+                            <label for="phone" class="label">Phone No.</label>
+                            <input id="phone" class="input" required type="text" name="phone" placeholder="Phone"
+                                value="<%= data.phone %>">
+                        </div>
+                        <div class="group">
+                            <label for="logooo" class="label">Logo</label>
+                            <input id="logooo" class="input" required type="text" name="logo" placeholder="Logo"
+                                value="<%= data.logo %>">
+                        </div>
+                        <div class="group">
+                            <label for="company_url" class="label">Company Website</label>
+                            <input id="company_url" class="input" required type="text" name="company_url"
+                                placeholder="Company Website" value="<%= data.company_url %>">
+                        </div>
+                        <div class="group">
+                            <label for="country" class="label">Country</label>
+                            <input id="country" class="input" required type="text" name="country" placeholder="Country"
+                                value="<%= data.country %>">
+                            <input type="hidden" value="<%= data.id %>" name="id">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button signUpBtn" value="Edit">
+                        </div>
+                
+                </div>    </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 <%- include("../../partials/footer") %>
 
 </html>

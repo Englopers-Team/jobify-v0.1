@@ -1,35 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head") %>
+<%- include("../partials/head") %>
+
 <body>
     <%- include("../partials/header/guest") %>
-    <%- include("../partials/login") %> 
-    <form action="/signup/person" method="post">
-        <input required type="text" name="first_name" value="">
-        <input required type="text" name="last_name" value="">
-        <input required type="email" name="email" value="">
-        <input required type="text" name="phone" value="">
-        <input required type="text" name="job_title" value="">
-        <input required type="text" name="country" value="<%=ip%>">
-        <input required type="hidden" name="account_type" value="p">
-        <input type="hidden" class="inputSession" name="session_id" value="">
-        <input required type="password" name="password" value="">
-        <button>Sign up</button>
-    </form>
-    <br>
-    <form action="/signup/company" method="post">
-        <input required type="text" name="company_name" value="">
-        <input required type="text" name="email" value="">
-        <input required type="text" name="phone" value="">
-        <input required type="text" name="logo" value="">
-        <input required type="text" name="country" value="<%=ip%>">
-        <input required type="text" name="company_url" value="">
-        <input required type="hidden" name="account_type" value="c">
-        <input type="hidden" class="inputSession" name="session_id" value="">
-        <input required type="password" name="password" value="">
-        <button>Sign up</button>
-    </form>
+    <%- include("../partials/login") %>
+    <h1 id="Title">Sign up</h1>
+
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                class="tab">Employer</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Recruiter</label>
+            <div class="login-form">
+                <form action="/signup/person" method="post">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="user" class="label">First Name</label>
+                            <input id="user" class="input" required type="text" name="first_name" value=""
+                                placeholder="Please enter your first name">
+                        </div>
+                        <div class="group">
+                            <label for="lastName" class="label">Last Name</label>
+                            <input id="LastName" class="input" required type="text" name="last_name" value=""
+                                placeholder="Please enter your last name">
+                        </div>
+                        <div class="group">
+                            <label for="email" class="label">Email</label>
+                            <input id="email" class="input" required type="email" name="email" value=""
+                                placeholder="Please enter your Email address">
+                        </div>
+                        <div class="group">
+                            <label for="phone" class="label">Phone No.</label>
+                            <input id="phone" class="input" required type="text" name="phone" value=""
+                                placeholder="Please enter your phone number">
+                        </div>
+                        <div class="group">
+                            <label for="job_title" class="label">Job Title</label>
+                            <input id="job_title" class="input" required type="text" name="job_title" value=""
+                                placeholder="Please enter the job title of yours">
+                        </div>
+                        <div class="group">
+                            <label for="country" class="label">Country</label>
+                            <input id="country" class="input" required type="text" name="country" value="<%=ip%>"
+                                placeholder="Please enter your country name">
+                            <input required type="hidden" name="account_type" value="p">
+                            <input type="hidden" class="inputSession" name="session_id" value="">
+                        </div>
+                        <div class="group">
+                            <label for="password" class="label">Password</label>
+                            <input id="password" class="input" required type="password" name="password" value=""
+                                placeholder="Please enter your password">
+                        </div>
+
+                        <div class="group">
+                            <input type="submit" class="button signUpBtn" value="Sign Up">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="sign-up-htm">
+                <div action="/signup/company" method="post">
+                    <div class="group">
+                        <label for="company_name" class="label">Company Name</label>
+                        <input id="company_name" class="input" required type="text" name="company_name" value="">
+                    </div>
+
+                    <div class="group">
+                        <label for="email" class="label">Email</label>
+                        <input id="email" class="input" required type="email" name="email" value="">
+                    </div>
+
+                    <div class="group">
+                        <label for="phone" class="label">Phone No.</label>
+                        <input id="phone" class="input" required type="text" name="phone" value="">
+                    </div>
+                    <div class="group">
+                        <label for="logo_url" class="label">Logo URL</label>
+                        <input id="logo_url" class="input" required type="text" name="logo" value="">
+                    </div>
+
+                    <div class="group">
+                        <label for="company_url" class="label">Company Website</label>
+                        <input id="company_url" class="input" required type="text" name="company_url" value="">
+                    </div>
+                    <div class="group">
+                        <label for="country" class="label">Country</label>
+                        <input id="country" class="input" required type="text" name="country" value="<%=ip%>">
+                        <input required type="hidden" name="account_type" value="c">
+                        <input type="hidden" class="inputSession" name="session_id" value="">
+                    </div>
+                    <div class="group">
+                        <label for="password" class="label">Password</label>
+                        <input id="password" class="input" required type="password" name="password" value="">
+                    </div>
+
+                    <div class="group">
+                        <input type="submit" class="button signUpBtn" value="Sign Up">
+                    </div>
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
 </body>
 <%- include("../partials/footer") %>
+
 <script src="../js/auth.js"></script>
+
 </html>
