@@ -1,5 +1,10 @@
+body{
+    width: 100%;
+    min-width: 100%;
+}
 footer {
-    position: absolute;
+    position: relative;
+    margin-top: 500px;
     bottom: 0;
     width: 100%;
 }
