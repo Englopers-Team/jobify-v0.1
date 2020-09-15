@@ -3,6 +3,7 @@
 <%- include("../../partials/head") %>
 
 <body>
+    <%- include("../../partials/header/company") %>
     <form action="/company/jobs/submit/action" method="post">
         <input type="text" value="" name="title">
         <input type="text" value="<%= ip%>" name="location">

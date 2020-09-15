@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
+<%- include("../../partials/head") %>
 <body>
-    <%console.log(data,data2) %>
-    <% data.forEach(item=>{%>
+    <%- include("../../partials/header/company") %>
+    <% data1.forEach(item=>{%>
     <img src="<%= item.avatar%>" alt="personal pic">
     <h3><%= item.first_name%> <span><%= item.last_name%></span></h3>
     <p><%= item.phone%></p>
@@ -22,7 +16,7 @@
 
     </form>
     <%  }) %>
-
+    <%- include("../../partials/footer") %>
 </body>
 
 </html>

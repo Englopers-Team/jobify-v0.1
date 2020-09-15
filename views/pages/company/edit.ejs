@@ -3,6 +3,7 @@
 <%- include("../../partials/head") %>
 <% console.log(data) %>
 <body>
+    <%- include("../../partials/header/company") %>
     <form action="/company/edit/update?_method=put" method="post">
         <input type="text" value="<%= data.company_name %>" name="company_name">
         <input type="text" value="<%= data.phone %>" name="phone">

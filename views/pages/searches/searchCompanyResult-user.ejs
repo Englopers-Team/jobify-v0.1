@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>hi iam user</p>
-    <%console.log(data) %>
-    <%console.log(data2) %>
-    <img src="<%= data.logo%>" alt="">
-    <a href = "<%= data.email%>">Send Email</a>
-    <p><%= data.phone%></p>
-    <p><%= data.country%></p>
+<%- include("../../partials/head") %>
 
+
+
+<body>
+    <%- include("../../partials/header/person") %>
+    <p>hi iam user</p>
+    <% if(data1 == undefined){ %>
+    <h1>Can't find any company with that name</h1>
+    <% }else{ %>
+    <img src="<%= data1.logo%>" alt="">
+    <a href="<%= data1.email%>">Send Email</a>
+    <p><%= data1.phone%></p>
+    <p><%= data1.country%></p>
+    <% } %>
+    <%- include("../../partials/footer") %>
 </body>
+
 </html>
