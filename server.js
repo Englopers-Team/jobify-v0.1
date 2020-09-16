@@ -86,7 +86,7 @@ mainObj.JOB = function (data) {
   this.location = data.location;
   this.type = data.type;
   this.description = data.description;
-  this.logo = data.company_logo;
+  this.logo = data.company_logo || 'https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png';
   this.company_url = data.company_url;
 };
 
@@ -97,7 +97,7 @@ mainObj.ip = (req) => {
     req.socket.remoteAddress ||
     (req.connection.socket ? req.connection.socket.remoteAddress : null) || '127.0.0.1';
   // ip = ip.slice(7, ip.length);
-  if(ip == ""){
+  if (ip == "") {
     ip = "127.0.0.1"
   }
   let URL = `https://api.ip2country.info/ip?${ip}`;
@@ -106,9 +106,9 @@ mainObj.ip = (req) => {
       return "Jordan";
     } else return data.body.countryName;
   })
-  .catch(()=>{
-    console.log("error API || ip ")
-  })
+    .catch(() => {
+      console.log("error API || ip ")
+    })
 };
 
 app.use("*", (req, res) => {
