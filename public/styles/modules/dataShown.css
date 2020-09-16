@@ -28,11 +28,11 @@
     height: 50px;
 }
 .applicationForm form  .name, .offersForm form .name{
-    width: 14% !important;
+    width: 20% !important;
 }
 .applicationForm form  > *, .offersForm form > * {
     margin: 0 20px;
-    width: 8%;
+    width: 16%;
     color: white;
     font-size: large;
     line-height: 50px;

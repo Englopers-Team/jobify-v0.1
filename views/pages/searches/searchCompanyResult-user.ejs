@@ -7,16 +7,19 @@
 <body>
     <%- include("../../partials/header/person") %>
     <% if(data1 == undefined){ %>
-    <h1>Can't find any company with that name</h1>
+    <h1 id="Title">Can't find any company with that name</h1>
+    <hr id="hrTitle">
     <% }else{ %>
-        <div class="companyDetails">
-            <img src="<%= data.logo%>" alt="">
-            <p class="name"><%= data.company_name%></p>
-            <a class="curuse" href="<%= data.email%>">Send Email</a>
-            <a class="curuse" href="<%= data.url%>">Company Site</a>
-            <p><%= data.phone%></p>
-            <p><%= data.country%></p>
-        </div>
+    <h1 id="Title">Company Result</h1>
+    <hr id="hrTitle">
+    <div class="companyDetails">
+        <img src="<%= data.logo%>" alt="">
+        <p class="name"><%= data.company_name%></p>
+        <a class="curuse" href="<%= data.email%>">Send Email</a>
+        <a class="curuse" href="<%= data.url%>">Company Site</a>
+        <p><%= data.phone%></p>
+        <p><%= data.country%></p>
+    </div>
     <% } %>
     <%- include("../../partials/footer") %>
 </body>

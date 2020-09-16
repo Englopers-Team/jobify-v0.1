@@ -11,11 +11,11 @@
         <div class="myApp">
             <img src="<%= item.logo%>" alt="">
             <h3><%= item.title%></h3>
-            <p><%= item.staus%></p>
             <p><%= item.company_name%></p>
+            <p><%= item.status%></p>
 
             <form action="/person/apps/<%= data2[0].id%>?_method=delete" method="post">
-                <button type="submit">Delete</button>
+                <button style="background-color: #ff7e67; color: black;" type="submit">Delete</button>
             </form>
         </div>
         <%})%>
