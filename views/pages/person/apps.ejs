@@ -4,8 +4,7 @@
 
 <body>
     <%- include("../../partials/header/person") %>
-
-    <% console.log("data2",data2)%>
+    <h1 id="Title">My Applications</h1>
     <div>
         <%data2.forEach(item=>{%>
         <div class="myApp">
@@ -15,7 +14,7 @@
             <p><%= item.company_name%></p>
 
             <form action="/person/apps/<%= data2[0].id%>?_method=delete" method="post">
-                <button type="submit">delete</button>
+                <button type="submit">Delete</button>
             </form>
         </div>
         <%})%>

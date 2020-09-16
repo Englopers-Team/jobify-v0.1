@@ -109,6 +109,12 @@ mainObj.ip = (req) => {
   })
 };
 
+app.use("*", (req, res) => {
+  let errorReason = "Error | Wrong page."
+  console.log(errorReason);
+  res.status(404).render("pages/error", { data: errorReason });
+});
+
 mainObj.client.connect().then(() => {
   app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`);

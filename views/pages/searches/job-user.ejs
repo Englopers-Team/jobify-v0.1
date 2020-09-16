@@ -4,7 +4,7 @@
 
 <body>
     <%- include("../../partials/header/person") %>
-
+    <h1 id="Title">Jobs</h1>
     <% data1.forEach((item,index)=>{ %>.
     <img src="<%= item.logo %>" alt="" width="50px">
     <h3><%= item.title %></h3>
@@ -56,5 +56,8 @@
 
     <%- include("../../partials/footer") %>
 </body>
+<div class='splash'>
+    <img src="../../imgs/splash.gif" alt="">
+</div>
 
 </html>

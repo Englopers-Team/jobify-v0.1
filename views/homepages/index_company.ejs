@@ -5,6 +5,7 @@
 
 <body>
     <%- include("../partials/header/company") %>
+    <h1 id="Title">Welcome, <%=data.company_name%></h1>
     <div class="companyHomepage">
         <section class="application">
             <div class="formHeader">
@@ -25,15 +26,13 @@
                     <select name="status">
                         <% if(item.status == 'Pending'){ %>
                         <option selected value="Pending">Pending</option>
-                        <option value="Accepted">Accepted</option>
-                        <option value="Rejected">Rejected</option>
+                        <option value="Accepted">Accept</option>
+                        <option value="Rejected">Reject</option>
                         <% }else if(item.status == 'Accepted'){ %>
-                        <option value="Pending">Pending</option>
                         <option selected value="Accepted">Accepted</option>
-                        <option value="Rejected">Rejected</option>
+                        <option value="Rejected">Reject</option>
                         <% } else{ %>
-                        <option value="Pending">Pending</option>
-                        <option value="Accepted">Accepted</option>
+                        <option value="Accepted">Accept</option>
                         <option selected value="Rejected">Rejected</option>
                         <% } %>
                     </select>

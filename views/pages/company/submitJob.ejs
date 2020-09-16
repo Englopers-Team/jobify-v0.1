@@ -4,17 +4,45 @@
 
 <body>
     <%- include("../../partials/header/company") %>
-    <form action="/company/jobs/submit/action" method="post">
-        <input type="text" value="" name="title">
-        <input type="text" value="<%= ip%>" name="location">
-        <select name="type">
-            <option selected value="Full Time">Full Time</option>
-            <option value="Part Time">Part Time</option>
-        </select>
-        <input type="text" value="" name="description">
-        <input type="hidden" value="<%= data.id %>" name="id">
-        <button type="submit">submit</button>
-    </form>
+
+    <h1 id="Title">Submit Job</h1>
+    <div class="login-wrap submitjobj">
+        <div class="login-html login-html3">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"></label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+            <div class="login-form">
+                <form action="/company/jobs/submit/action" method="post">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="titlee" class="label">Job Title</label>
+                            <input id="titlee" class="input" required type="text" name="title" placeholder="Job Title"
+                                value="">
+                        </div>
+                        <div class="group">
+                            <label for="titlee" class="label">Job Type</label>
+                            <select class="jobTypee" name="type">
+                                <option selected value="Full Time">Full Time</option>
+                                <option value="Part Time">Part Time</option>
+                            </select>
+                        </div>
+                        <div class="group">
+                            <label for="country" class="label">Location</label>
+                            <input id="country" class="input" required type="text" name="location" placeholder="Job Location" value="<%= ip%>">
+                            <input type="hidden" value="<%= data.id %>" name="id">
+                        </div>
+                        <div class="group">
+                            <label for="descriptionn" class="label">Description</label>
+                            <input id="descriptionn" class="input" required type="text" name="description" placeholder="Description" value="">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button signUpBtn" value="Submit">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 <%- include("../../partials/footer") %>
 

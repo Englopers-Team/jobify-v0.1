@@ -11,7 +11,25 @@
 </head>
 
 <body>
-    <%- include("../partials/header/guest") %>
+    <% if(data3 == 'guest'){%>
+
+        <%- include("../partials/header/guest") %>
+        <%- include("../partials/login") %>
+
+   <% } %>
+   <% if(data3 == 'employer'){%>
+
+    <%- include("../partials/header/person") %>
+    <%- include("../partials/login") %>
+
+<% } %>
+<% if(data3 == 'company'){%>
+
+    <%- include("../partials/header/company") %>
+    <%- include("../partials/login") %>
+
+<% } %>
+
     <main>
         <section id="jobify-logo">
             <img src="../../imgs/Jobify.png" alt="" />
