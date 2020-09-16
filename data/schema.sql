@@ -63,8 +63,8 @@ CREATE TABLE IF NOT EXISTS job_offers (
 INSERT INTO auth (email,password,account_type,session_id) VALUES('abd@gmail.com','123456','p','xxx3215315gew');
 INSERT INTO auth (email,password,account_type,session_id) VALUES('zak@gmail.com','123456','c','xxx3215rgagagrga');
 
-INSERT INTO person (first_name, last_name, phone, job_title, country, age, avatar, experince, cv, auth_id) VALUES ('Abd','Zat','0790278534','Developer','Jordan',24,'https://library.kissclipart.com/20180929/ooq/kissclipart-avatar-person-clipart-avatar-computer-icons-person-87355c56a1748473.jpg', 5,'cv link', 1);
-INSERT INTO company (company_name,phone,company_url,logo,country,auth_id) VALUES ('Zakaria Company', '079028555', 'www.zak.com', 'https://library.kissclipart.com/20180929/ooq/kissclipart-avatar-person-clipart-avatar-computer-icons-person-87355c56a1748473.jpg', 'Jordan', 2);
+INSERT INTO person (first_name, last_name, phone, job_title, country, age, avatar, experince, cv, auth_id) VALUES ('Malek','Ahmed','0790278534','Developer','Jordan','24','https://library.kissclipart.com/20180929/ooq/kissclipart-avatar-person-clipart-avatar-computer-icons-person-87355c56a1748473.jpg', '5','https://www.docdroid.net/izBd6Li/cv-pdf', 1);
+INSERT INTO company (company_name,phone,company_url,logo,country,auth_id) VALUES ('Demo Company', '079028555', 'www.demo.com', 'https://www.flaticon.com/svg/static/icons/svg/993/993891.svg', 'Jordan', 2);
 
 INSERT INTO jobs (title,location,type,description,company_id) VALUES ('Developer','Jordan','Full Time','A full time job with 900jd salary.',1);
 INSERT INTO jobs (title,location,type,description,company_id) VALUES ('Developer','usa','Full Time (iam from database)','A full time job with 900jd salary.',1);
