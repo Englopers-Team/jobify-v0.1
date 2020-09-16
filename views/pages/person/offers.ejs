@@ -6,24 +6,24 @@
     <%- include("../../partials/header/person") %>
     <div>
         <%data2.forEach(item=>{%>
-        <div>
+        <div class="offers">
             <img src="<%= item.logo%>" alt="">
             <h3><%= item.title%></h3>
             <p><%= item.company_name%></p>
             <p><%= item.type%></p>
-            <form action="/person/offers/<%= data2[0].id %>?_method=put" method="post">
+            <form action="/person/offers/<%= data2[0].id %>?_method=put" method="post" class="OffersForm">
                 <select name="status">
                     <% if(item.status == "Pending"){ %>
                     <option selected value="Pending">Pending</option>
                     <option value="Accepted">Accept</option>
                     <option value="Rejected">Reject</option>
-                   <% } else if(item.status == "Accepted"){ %>
+                    <% } else if(item.status == "Accepted"){ %>
                     <option selected value="Accepted">Accepted</option>
                     <option value="Rejected">Reject</option>
-                  <% }else { %>
+                    <% }else { %>
                     <option value="Accepted">Accept</option>
                     <option selected value="Rejected">Rejected</option>
-                 <% } %>
+                    <% } %>
                 </select>
                 <button>update offer</button>
             </form>
