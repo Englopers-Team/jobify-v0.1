@@ -11,7 +11,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    margin: 100px auto 20px;
+    margin: 30px auto 20px;
     background-color: rgba(0, 0, 0, 0.144);
     height: 50px;
     width:95%;
@@ -29,6 +29,8 @@
     color: white;
     font-size: large;
     line-height: 50px;
+    width: 13%;
+    overflow: hidden;
 }
 .jobResult button{
     background-color: #ff7e67;
