@@ -5,19 +5,6 @@
 <body>
     <%- include("../../partials/header/person") %>
     <h1 id="Title"><%= data.first_name %>!! You can edit your data here </h1>
-    <!-- <form action="/person/edit/update?_method=put" method="post">
-        <input type="text" name="first_name" value="<%= data.first_name %>">
-        <input type="text" name="last_name" value="<%= data.last_name %>">
-        <input type="text" name="phone" value="<%= data.phone %>">
-        <input type="text" name="job_title" value="<%= data.job_title %>">
-        <input type="text" name="country" value="<%= data.country %>">
-        <input type="text" name="age" value="<%= data.age %>">
-        <input type="text" name="avatar" value="<%= data.avatar %>">
-        <input type="text" name="experince" value="<%= data.experince %>">
-        <input type="text" name="cv" value="<%= data.cv %>">
-        <input type="hidden" name="id" value="<%= data.id %>">
-        <button>Edit</button>
-    </form> -->
     <div class="login-wrap-edit-person">
         <div class="login-html-edit-person">
             <input id="tab-1" type="hidden" name="tab" class="sign-in" checked><label for="tab-1" class="tab"></label>
@@ -70,11 +57,6 @@
                             <input id="country" class="input" required type="text" name="country"
                                 value="<%=data.country%>" placeholder="Please enter your country name">
                             <input type="hidden" name="id" value="<%= data.id %>">
-                        </div>
-                        <div class="group">
-                            <label for="password" class="label">Password</label>
-                            <input id="password" class="input" required type="password" name="password" value=""
-                                placeholder="Please enter your password">
                         </div>
                         <div class="group">
                             <input type="submit" class="button signUpBtn" value="Update">

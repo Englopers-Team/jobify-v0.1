@@ -4,17 +4,18 @@
 
 <body>
     <%- include("../../partials/header/company") %>
-    <% console.log('data:',data) %>
-    <% console.log('data2:',data2) %>
+    <h1 id="Title">My Jobs</h1>
+    
     <% data2.forEach((item,index)=>{ %>
+
     <p><%= item.title%></p>
     <p><%= item.location%></p>
     <p><%= item.type%></p>
     <div style="display: none;" id="div<%= index%>">
         <button id="<%= index%>" onClick=updateMyJobs(this.id)>x</button>
         <form action="/company/jobs/update/<%= item.id%>?_method=put" method="post">
-            <input type="text" value="<%= item.title%>" name="title">
-            <input type="text" value="<%= item.location%>" name="location">
+            <input required type="text" value="<%= item.title%>" name="title">
+            <input required type="text" value="<%= item.location%>" name="location">
             <select name="type">
                 <% if(item.type == 'Full Time'){%>
                 <option selected value="Full Time">Full Time</option>
@@ -25,7 +26,7 @@
                 <% } %>
             </select>
             <input type="text" value="<%= item.description%>" name="description">
-            <button type="submit">update</button></form>
+            <button type="submit">Update</button></form>
     </div>
 
     <form action="/company/jobs/delete/<%= item.id%>?_method=delete" method="post">

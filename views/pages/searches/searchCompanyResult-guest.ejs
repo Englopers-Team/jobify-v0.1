@@ -8,6 +8,7 @@
     <% if(data == undefined){ %>
     <h1>Can't find any company with that name</h1>
     <% }else{ %>
+
     <div class="companyDetails">
         <img src="<%= data.logo%>" alt="">
         <p class="name"><%= data.company_name%></p>
@@ -19,5 +20,9 @@
     <% } %>
     <%- include("../../partials/footer") %>
 </body>
+<div class='splash'>
+    <img src="../../imgs/splash.gif" alt="">
+</div>
+<script src="../js/auth.js"></script>
 
 </html>
