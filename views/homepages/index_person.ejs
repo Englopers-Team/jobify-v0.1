@@ -54,12 +54,12 @@
                         <form action="/search/job/apply/<%=item.id%>" method="POST" class="fromApply0">
                             <div class="group">
                                 <label for="user" class="label">First Name</label>
-                                <input id="user" class="input" required type="text" name="first_name" value=""
+                                <input id="user" class="input" required type="text" name="first_name" value="<%= data.first_name%>"
                                     placeholder="Please enter your first name">
                             </div>
                             <div class="group">
                                 <label for="lastName" class="label">Last Name</label>
-                                <input id="LastName" class="input" required type="text" name="last_name" value=""
+                                <input id="LastName" class="input" required type="text" name="last_name" value="<%= data.last_name%>"
                                     placeholder="Please enter your last name">
                             </div>
                             <div class="group">
@@ -67,11 +67,11 @@
                                 <input id="country" class="input" required type="text" name="country" value="<%=ip%>"
                                     placeholder="Please enter your country name">
                                 <input type="hidden" name="company_id" value="<%= item.company_id %>">
-                                <input type="hidden" name="personID" value="<%= item.id %>">
+                                <input type="hidden" name="person_id" value="<%= data.id %>">
                             </div>
                             <div class="group">
                                 <label for="phone" class="label">Phone No.</label>
-                                <input id="phone" class="input" required type="text" name="phone" value=""
+                                <input id="phone" class="input" required type="text" name="phone" value="<%= data.phone%>"
                                     placeholder="Please enter your phone number">
                             </div>
                             <div class="group groupa">

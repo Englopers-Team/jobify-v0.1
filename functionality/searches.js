@@ -29,8 +29,8 @@ obj.searchJob = (req, res) => {
                                 let SQL = `SELECT * FROM person WHERE auth_id=$1;`
                                 let Value = [id];
                                 mainObj.client.query(SQL, Value)
-                                    .then((resultPerson) => {
-                                        res.render("pages/searches/job-user", { data1: resultDataBase.rows, data2: jobData, data: resultPerson.rows[0] })
+                                    .then(async(resultPerson) => {
+                                        res.render("pages/searches/job-user", { data1: resultDataBase.rows, data2: jobData, data: resultPerson.rows[0], ip: await mainObj.ip(req) })
                                     })
                                     .catch(error => {
                                         let errorReason = "Error | Can't select person details in database."
@@ -61,7 +61,7 @@ obj.searchJob = (req, res) => {
 obj.applyJob = (req, res) => {
     let jobID = req.params.jobID
     let companyID = req.body.company_id
-    let personID = req.body.personID
+    let personID = req.body.person_id
     let SQL = `INSERT INTO applications (person_id,job_id,company_id) VALUES ($1,$2,$3);`
     let value = [personID, jobID, companyID]
     mainObj.client.query(SQL, value)
