@@ -7,10 +7,12 @@ mainObj.superagent = require("superagent");
 const methodOverride = require("method-override");
 const pg = require("pg");
 require("dotenv").config();
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3000;
 mainObj.client = new pg.Client(process.env.DATABASE_URL);
 const app = express();
+app.use(cors());
 
 app.set("view engine", "ejs");
 app.use(express.static("./public"));
@@ -93,7 +95,7 @@ mainObj.ip = (req) => {
     req.headers["x-forwarded-for"] ||
     req.connection.remoteAddress ||
     req.socket.remoteAddress ||
-    (req.connection.socket ? req.connection.socket.remoteAddress : null);
+    (req.connection.socket ? req.connection.socket.remoteAddress : null) || '127.0.0.1';
   ip = ip.slice(7, ip.length);
   if(ip== ""){
     ip = "127.0.0.1"
