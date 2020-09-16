@@ -5,17 +5,26 @@
 <body>
     <%- include("../../partials/header/company") %>
     <% data1.forEach(item=>{%>
-    <img src="<%= item.avatar%>" alt="personal pic">
-    <h3><%= item.first_name%> <span><%= item.last_name%></span></h3>
-    <p><%= item.phone%></p>
-    <p><%= item.age%></p>
-    <a href="<%= item.cv%>">Cv</a>
-    <form action="/search/person/offer" method="POST">
-        <input type="hidden" name="person_id" value="<%= item.id%>">
-        <input type="hidden" name="company_id" value="<%= data.id%>">
-        <button>SEND OFFER</button>
+        <div class="personResult">
+            <img src="<%= item.avatar%>" alt="personal pic">
+            <h3><%= item.first_name%> <span><%= item.last_name%></span></h3>
+            <p><%= item.phone%></p>
+            <p><%= item.age%> year</p>
+            <a class="curuse" href="<%= item.cv%>">Cv</a>
+            <button id="<%= item.id%>" onClick=reply_clickPerson(this.id)>SEND OFFER</button>
+            <div style="display: none;" class="<%= item.id%>">
+                <button id="<%= item.id%>" onClick=reply_clickPerson(this.id)>X</button>
+                <form action="/search/person/offer" method="POST">
+                    <input type="text" name="description" value="">
+                    <input type="text" name="location" value="">
+                    <input type="hidden" name="person_id" value="<%= item.id%>">
+                    <input type="hidden" name="company_id" value="<%= data.id%>">
+                    <button>SEND OFFER</button>
+                </form>
+            </div>
 
-    </form>
+        </div>
+
     <%  }) %>
     <%- include("../../partials/footer") %>
 </body>

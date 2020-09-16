@@ -16,3 +16,9 @@ function signup(){
 $(".avatarDiv").click(function(){
     $(".dropdownMenu").toggleClass("dropdownMenuActive").slow();
   });
+
+
+function reply_clickPerson(clicked_id){
+    $("." +clicked_id).toggle();
+
+}
