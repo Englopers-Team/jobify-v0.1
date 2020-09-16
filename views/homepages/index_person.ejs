@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head") %>
-
+<!-- <link rel="stylesheet" href="../../styles/modules/personBG.css"> -->
 <body>
     <%- include("../partials/header/person") %>
-    <h1 id="Title">Welcome, <%=data.first_name%> <%=data.last_name%></h1>
+    <div style="display:flex; justify-content:center;"><h1 id="Title">Welcome, <h1 id="Title" style="color: #ff7e67;"><%=data.first_name%> <%=data.last_name%></h1></h1>
+    </div>
+    <br>
     <div class="searchForm">
         <form class="mainFlex" action="/search/job" method="get">
             <div id="searchBoxes">
@@ -19,11 +21,10 @@
     </div>
 
 
-
+    
     <div class="main-div">
-
+        <h1 id="Title" style="margin-top: 10px;">Recommanded Jobs: <%= data3.length + data2.length%></h1>
         <div class="header-dev">
-            <h2>Recommanded Jobs: <%= data3.length + data2.length%></h2>
         </div>
         <div class="dbInfo">
             <% data3.forEach((item,index) =>{ %>
@@ -64,7 +65,6 @@
             <% }) %>
         </div>
         <div class="apiInfo">
-            <% console.log(data2)%>
             <% data2.forEach((item,index) =>{ %>
             <div class="suggJobs">
                 <img src="<%=item.logo%>" alt="">

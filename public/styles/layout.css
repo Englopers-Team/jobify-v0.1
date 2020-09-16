@@ -5,7 +5,12 @@ body {
     margin: 0 auto;
     text-align: center;
 }
+header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 footer {
+    box-shadow: 50px 50px 50px 50px rgb(77, 77, 77);
     position: relative;
     /* top: 650px; */
     bottom: 0;

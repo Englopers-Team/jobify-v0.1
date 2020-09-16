@@ -3,7 +3,7 @@
     margin-top: 80px;
     background-color: #ecf4f352;
     padding: 80px 0;
-    width: 80%;
+    width: 55%;
     z-index: -1;
     border-radius: 4px;
 }
@@ -48,9 +48,9 @@
 .searchBtn input {
     height: 100%;
     width: 100%;
-    background-color: #006a71;
+    background-color: #ff7e67;
     margin-left: 25px;
-    color: whitesmoke;
+    color: black;
     opacity: 0.8;
     border: transparent;
     text-decoration: none;
@@ -64,17 +64,18 @@
     /* font-weight: bold; */
     letter-spacing: 1px;
     /* color: #fff; */
-    background-color: #006a71;
+    background-color: #ff7e67;
     padding: 15px 30px;
     border-radius: 5px;
-    box-shadow: 0 5px 0 0 #014347;
+    box-shadow: 0 5px 0 0 #b65949;
+    color: black;
     margin: 0 20px;
 }
 
 .searchBtnStyle:hover {
-    background-color: #ff7e67;
-    box-shadow: 0 5px 0 0 #b65949;
-    color: black;
+    background-color: #006a71;
+    box-shadow: 0 5px 0 0 #014347;
+    color: white;
 }
 
 .searchBtnStyle:active {
