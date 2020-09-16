@@ -96,8 +96,8 @@ mainObj.ip = (req) => {
     req.connection.remoteAddress ||
     req.socket.remoteAddress ||
     (req.connection.socket ? req.connection.socket.remoteAddress : null) || '127.0.0.1';
-  ip = ip.slice(7, ip.length);
-  if(ip== ""){
+  // ip = ip.slice(7, ip.length);
+  if(ip == ""){
     ip = "127.0.0.1"
   }
   let URL = `https://api.ip2country.info/ip?${ip}`;
