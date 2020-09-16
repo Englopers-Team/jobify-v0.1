@@ -1,66 +1,70 @@
-
-
 .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup1 {
+  margin: 3% 35%;
+  padding: 40px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  min-height: 100px;
+  position: absolute;
+  transition: all 5s ease-in-out;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.popup1 h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup1 .close1 {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup1 .close1:hover {
+  color: #ff7e67;
+}
+
+.content strong {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+  .box {
+    width: 70%;
   }
-  .overlay:target {
-    visibility: visible;
-    opacity: 1;
-  }
-  
   .popup1 {
-    margin: 10% auto;
-    padding: 40px;
-    background: #fff;
-    border-radius: 5px;
-    width: 30%;
-    min-height: 100px;
-    position: relative;
-    transition: all 5s ease-in-out;
-    overflow: hidden;
+    width: 70%;
   }
-  
-  .popup1 h2 {
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 20px;
-    color: #333;
-    font-family: Tahoma, Arial, sans-serif;
-  }
-  .popup1 .close1 {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-  }
-  .popup1 .close1:hover {
-    color: #ff7e67;
-  }
-  .popup1 .content {
-    /* max-height: 30%; */
-  }
-  .content strong{
-      text-decoration: underline;
-      font-weight: bold;
-  }
-  
-  @media screen and (max-width: 700px){
-    .box{
-      width: 70%;
-    }
-    .popup1{
-      width: 70%;
-    }
-  }
+}
