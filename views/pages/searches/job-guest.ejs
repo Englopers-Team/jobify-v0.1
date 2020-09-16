@@ -22,13 +22,14 @@
         </div>
 
         <%})%>
-
+        <% console.log(data2) %>
         <% data2.forEach(item=>{ %>.
         <div class="jobResult">
             <img src="<%= item.logo %>" alt="">
             <h3><%= item.title %></h3>
             <p><%= item.type %></p>
-            <p><%= item.company_name %></p>
+            <p>-</p>
+            <p><%= item.location %></p>
             <button><a href="#popup1">Details</a></button>
         </div>
         <%})%>

@@ -5,55 +5,70 @@
 <body>
     <%- include("../../partials/header/person") %>
     <h1 id="Title">Jobs</h1>
-    <% data1.forEach((item,index)=>{ %>.
-    <img src="<%= item.logo %>" alt="" width="50px">
-    <h3><%= item.title %></h3>
-    <p><%= item.type %></p>
-    <p><%= item.company_name %></p>
-    <button id="id<%= index %>" onClick=reply_click(this.id)>APPLY</button>
-    <div style="display: none;" class="dbid<%= index %>">
-        <fieldset>
-            <button id="id<%= index %>" onClick=reply_click(this.id)>X</button>
-            <form action="/search/job/apply/<%=item.id%>" method="POST">
-                <p>company INFO</p>
+    <div class="User-div">
+        <div class="dbInfo">
+            <% data1.forEach((item,index)=>{ %>.
+            <div class="suggJobs">
                 <img src="<%= item.logo %>" alt="" width="50px">
+                <h3><%= item.title %></h3>
+                <p><%= item.type %></p>
                 <p><%= item.company_name %></p>
-                <p><%= item.phone %></p>
-                <p>Job Application</p>
-                <br>
-                <img src="<%= data.avatar%>" alt="" width="50px">
-                <input type="text" name="first_name" value="<%= data.first_name%>">
-                <input type="text" name="last_name" value="<%= data.last_name%>">
-                <input type="text" name="country" value="<%= data.country%>">
-                <input type="text" name="phone" value="<%=data.phone%>">
-                <input type="hidden" name="company_id" value="<%= item.company_id %>">
-                <input type="hidden" name="personID" value="<%= data.id %>">
-                <a href="<%= data.cv%>">My CV</a>
-                <input type="hidden" name="cv" value="<%= data.cv%>">
-                <input type="submit" value="APPLY My Application">
-            </form>
-        </fieldset>
+                <button class="jobBtn" id="id<%= index %>" onClick=reply_click(this.id)>APPLY</button>
+            </div>
+            <div style="display: none;" class="dbid<%= index %>">
+                <fieldset>
+                    <button class="close" id="id<%= index %>" onClick=reply_click(this.id)>CLose The Form</button>
+                    <form action="/search/job/apply/<%=item.id%>" method="POST" class="applyForm">
+                        <div class="info">
+                            <p>company INFO</p>
+                            <img src="<%= item.logo %>" alt="" width="50px">
+                            <p><%= item.location %></p>
+                            <p><%= item.phone %></p>
+                            <p>Job Application</p>
+                        </div>
+                        <div class="form">
+                            <img src="<%= data.avatar%>" alt="" width="50px">
+                            <input type="text" name="first_name" value="<%= data.first_name%>">
+                            <input type="text" name="last_name" value="<%= data.last_name%>">
+                            <input type="text" name="country" value="<%= data.country%>">
+                            <input type="text" name="phone" value="<%=data.phone%>">
+                            <input type="hidden" name="company_id" value="<%= item.company_id %>">
+                            <input type="hidden" name="personID" value="<%= data.id %>">
+                            <a href="<%= data.cv%>">My CV</a>
+                            <input type="hidden" name="cv" value="<%= data.cv%>">
+                            <input type="submit" value="APPLY My Application">
+                        </div>
+                    </form>
+                </fieldset>
 
+            </div>
+            <%})%>
+        </div>
+        <div class="apiInfo">
+
+
+
+            <% console.log(data2) %>
+            <% data2.forEach((item,index)=>{ %>.
+            <div class="suggJobs">
+                <img src="<%= item.logo %>" alt="" width="50px">
+                <h3><%= item.title %></h3>
+                <p><%= item.type %></p>
+                <p><%= item.location %></p>
+                <button class="jobBtn" id="api<%= index %>" onClick=reply_clickapi(this.id)>DETAILS</button>
+            </div>
+            <div style="display: none;" class="api<%= index %> detailsForm">
+                <fieldset>
+                    <button class="close" id="api<%= index %>" onClick=reply_clickapi(this.id)>Close The Form</button>
+                    <p><%= item.location %></p>
+                    <a href="<%= item.company_url %>">company website</a>
+                </fieldset>
+            </div>
+            <%})%>
+        </div>
+
+        <%- include("../../partials/footer") %>
     </div>
-    <%})%>
-
-    <% console.log(data2) %>
-    <% data2.forEach((item,index)=>{ %>.
-    <img src="<%= item.logo %>" alt="" width="50px">
-    <h3><%= item.title %></h3>
-    <p><%= item.type %></p>
-    <p><%= item.company_name %></p>
-    <button id="api<%= index %>" onClick=reply_clickapi(this.id)>DETAILS</button>
-    <div style="display: none;" class="api<%= index %>">
-        <fieldset>
-            <button id="api<%= index %>" onClick=reply_clickapi(this.id)>X</button>
-            <p><%= item.location %></p>
-            <a href="<%= item.company_url %>">company website</a>
-        </fieldset>
-    </div>
-    <%})%>
-
-    <%- include("../../partials/footer") %>
 </body>
 <div style="display:flex; justify-content: center; align-items: center;" class='splash'>
     <img src="../../imgs/splash.gif" alt="">
