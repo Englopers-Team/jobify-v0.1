@@ -15,10 +15,10 @@ CREATE TABLE IF NOT EXISTS person (
     phone VARCHAR(255),
     job_title VARCHAR(255),
     country VARCHAR(255),
-    age INT,
-    avatar VARCHAR(255),
-    experince INT,
-    cv VARCHAR(255),
+    age VARCHAR(255) DEFAULT '23',
+    avatar VARCHAR(255) DEFAULT 'https://library.kissclipart.com/20180929/ooq/kissclipart-avatar-person-clipart-avatar-computer-icons-person-87355c56a1748473.jpg',
+    experince VARCHAR(255) DEFAULT '0',
+    cv VARCHAR(255) DEFAULT 'Edit your profile',
     auth_id INT REFERENCES auth (id)
 );
 
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS company (
     company_name VARCHAR(255),
     phone VARCHAR(255),
     company_url VARCHAR(255),
-    logo VARCHAR(255),
+    logo VARCHAR(255) DEFAULT 'https://www.flaticon.com/svg/static/icons/svg/993/993891.svg',
     country VARCHAR(255),
     auth_id INT REFERENCES auth (id)
 );
