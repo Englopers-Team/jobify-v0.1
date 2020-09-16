@@ -8,32 +8,48 @@
     <title>Jobify</title>
     <link rel="stylesheet" href="../../styles/styles.css">
     <link rel="stylesheet" href="../../styles/modules/aboutus.css">
+    <style>
+        body {
+            background: #ecf4f3;
+        }
+
+        header {
+            background: linear-gradient(-45deg, #68b0ab, #006a71, #68b0ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        footer {
+            box-shadow: none;
+        }
+    </style>
 </head>
 
 <body>
     <% if(data3 == 'guest'){%>
 
-        <%- include("../partials/header/guest") %>
-        <%- include("../partials/login") %>
+    <%- include("../partials/header/guest") %>
+    <%- include("../partials/login") %>
 
-   <% } %>
-   <% if(data3 == 'employer'){%>
+    <% } %>
+    <% if(data3 == 'employer'){%>
 
     <%- include("../partials/header/person") %>
     <%- include("../partials/login") %>
 
-<% } %>
-<% if(data3 == 'company'){%>
+    <% } %>
+    <% if(data3 == 'company'){%>
 
     <%- include("../partials/header/company") %>
     <%- include("../partials/login") %>
 
-<% } %>
+    <% } %>
 
     <main>
         <section id="jobify-logo">
-            <img src="../../imgs/Jobify.png" alt="" />
+            <img src="../../imgs/Jobify2.png" alt="" />
         </section>
+        <h1 style="color:black; margin-top: 0px;" id="Title">Englopers Team</h1>
         <section class="ourPictures">
 
             <div class="teamMemberPic" id="teamMembersPic">

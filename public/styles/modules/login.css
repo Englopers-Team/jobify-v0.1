@@ -19,9 +19,9 @@
     display: none;
     transition: none;
 	background: #fff;
-    min-width: 600px;
-    min-height: 600px;
-	padding: 30px 80px 80px 80px;
+    min-width: 500px;
+    min-height: 510px;
+	/* padding: 30px 80px 80px 80px; */
 	
 
 }
@@ -73,7 +73,7 @@
 
 #loginForm label {
 	font-size:14px;
-	color:darkgray;
+	color: #006a71;
 	cursor:pointer;
 }
 
@@ -98,8 +98,17 @@
 	   -moz-transition:0.2s ease all;
 	    -ms-transition:0.2s ease all;
 	     -o-transition:0.2s ease all;
-	        transition:0.2s ease all;
+			transition:0.2s ease all;
+			font-size: 20px;
 }
+#loginForm input:nth-of-type(1){
+	margin-top: 30px;
+} 
+
+#loginForm input::placeholder{
+	font-size: 20px;
+}
+
 
 #loginForm input[type=text]:focus,
 #loginForm input[type="password"]:focus {
@@ -108,8 +117,9 @@
 
 #loginForm input[type=submit] {
 	padding:15px 50px;
-	width:auto;
-	background:#006a71;
+	width:100%;
+	background:#ff7e67;
+	font-size: 25px;
 	border:none;
 	color:white;
 	cursor:pointer;
@@ -152,7 +162,7 @@
 	font-size:60px;
 	font-weight:bold;
 	text-align:center;
-	color:lightgray;
+	color:#006a71;
 	-webkit-transition:0.2s ease all;
 	   -moz-transition:0.2s ease all;
 	    -ms-transition:0.2s ease all;

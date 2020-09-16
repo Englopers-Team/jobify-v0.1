@@ -166,9 +166,13 @@ a.flat-btn2:active {
   flex-direction: column;
   position: absolute;
   right: 20px;
-  top: 70px;
-  border: black solid 2px;
-  border-radius: 5px;
+  top: 120px;
+  /* border: black solid 2px; */
+  border-radius: 0px;
+  background: linear-gradient(-45deg, #68b0ab,#006a71, #68b0ab);
+	background-size: 400% 400%;
+    animation: gradient 15s ease infinite;  
+    box-shadow:0 18px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 
 .dropdownMenuActive a{
@@ -179,11 +183,12 @@ a.flat-btn2:active {
   background-color: #ecf4f38a;
   color: black;
   text-decoration: none;
-  margin: 15px;
+  margin: 7px 15px;
+  outline: none;
 }
 
 .dropdownMenuActive a:hover{
-  background-color: #006a71;
-  border: black solid 2px;
-  color: #ff7e67;
+  background-color: #ff7e67;
+  /* border: black solid 2px; */
+  color: black;
 }

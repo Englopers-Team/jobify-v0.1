@@ -75,6 +75,8 @@
   .ourPictures {
     width: 100%;
     padding: 3%;
+    display: flex;
+    justify-content: center;
   }
   .teamMemberPic {
     width: 40%;
