@@ -1,9 +1,18 @@
+.mainFlex{
+    width: 100%;
+    z-index: 5;
+    /* margin: 0 20px; */
+    flex-wrap: nowrap;
+    justify-content: center;
+
+}
 .searchForm {
     margin: 0 auto;
     margin-top: 80px;
     background-color: #ecf4f352;
-    padding: 80px 0;
-    width: 55%;
+    padding: 80px 40px;
+    min-width: 60%;
+    max-width: 60%;
     z-index: -1;
     border-radius: 4px;
 }
@@ -14,17 +23,18 @@
     box-shadow: 2px 2px rgba(184, 184, 184, 0.541);
     z-index: 5;
     background-color: whitesmoke;
+    margin: 0 20px;
 }
 
 .searchForm input {
-    width: 450px;
+    width: 65%;
     height: 80px;
     border: transparent;
     border-radius: 15px;
     font-size: 33px;
     color: black;
     opacity: 0.6;
-    padding: 12px 20px;
+    /* padding: 12px 20px; */
     outline: none;
 }
 
@@ -32,20 +42,23 @@
     width: 0px;
     border-radius: 0;
     border-left: black solid;
-    padding: 12px 0;
+    /* padding: 12px 0; */
     /* border: solid 3.5px #006a71; */
 }
 
 .searchForm input:nth-of-type(3) {
-    width: 180px;
+    width: 35%;
 }
 
 .searchBtn {
     height: 85px;
-    width: 180px;
+    min-width: 20%;
+    /* margin-right: 40px; */
+    display: flex;
 }
 
 .searchBtn input {
+    text-align: center;
     height: 100%;
     width: 100%;
     background-color: #ff7e67;
@@ -65,11 +78,12 @@
     letter-spacing: 1px;
     /* color: #fff; */
     background-color: #ff7e67;
-    padding: 15px 30px;
+    padding: 0 15px;
     border-radius: 5px;
     box-shadow: 0 5px 0 0 #b65949;
     color: black;
     margin: 0 20px;
+    text-align: center;
 }
 
 .searchBtnStyle:hover {
