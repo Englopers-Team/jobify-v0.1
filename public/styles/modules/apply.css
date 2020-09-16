@@ -1,0 +1,66 @@
+.jobBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jobBtn a {
+    /* align-self: center; */
+    /* display: block; */
+    /* padding: 14px 50px; */
+    width: 100%;
+}
+
+.fromApply0 .group {
+    margin-bottom: 15px;
+}
+
+.fromApply0 .tab, .fromApply0 .group .label, .fromApply0 .group .button {
+    text-transform: uppercase;
+}
+
+.fromApply0 .group .label, .fromApply0 .group .input, .fromApply0 .group .button, .fromApply0 .group select {
+    width: 100%;
+    color: black;
+    display: block;
+}
+
+.fromApply0 .group .input, .fromApply0 .group .button, .fromApply0 .group select {
+    border: none;
+    font-size: 17px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background: rgba(87, 87, 87, 0.287)
+}
+
+.fromApply0 .group input[data-type="password"] {
+    text-security: circle;
+    -webkit-text-security: circle;
+}
+
+.fromApply0 .group input::placeholder {
+    font-size: 15px;
+}
+
+.fromApply0 .group .label {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.fromApply0 .group .button {
+    background: #ff7e67;
+    color: whitesmoke;
+    font-size: 20px;
+}
+.groupa{
+    text-align: right;
+}
+
+.hrApply{
+    width: 70%;
+    margin-bottom: 30px;
+    margin-top: 0px;
+}

@@ -21,7 +21,7 @@
     border: solid 3.5px #006a71;
     border-radius: 15px;
     box-shadow: 2px 2px rgba(184, 184, 184, 0.541);
-    z-index: 5;
+    /* z-index: 5; */
     background-color: whitesmoke;
     margin: 0 20px;
 }

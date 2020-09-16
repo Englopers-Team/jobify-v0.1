@@ -2,14 +2,17 @@
 <html lang="en">
 <%- include("../partials/head") %>
 <!-- <link rel="stylesheet" href="../../styles/modules/personBG.css"> -->
+
 <body>
     <%- include("../partials/header/person") %>
-    <div style="display:flex; justify-content:center;"><h1 id="Title">Welcome, <h1 id="Title" style="color: #ff7e67;"><%=data.first_name%> <%=data.last_name%></h1></h1>
+    <div style="display:flex; justify-content:center;">
+        <h1 id="Title">Welcome, <h1 id="Title" style="color: #ff7e67;"><%=data.first_name%> <%=data.last_name%></h1>
+        </h1>
     </div>
     <br>
     <div class="searchForm">
         <form class="mainFlex" action="/search/job" method="get">
-            <div id="searchBoxes">
+            <div id="searchBoxes" style="display: flex; flex-wrap: nowrap;">
                 <input type="text" name="title" value="" placeholder="Job Title">
                 <input type="text">
                 <input type="text" name="location" value="<%= ip%>" placeholder="Country">
@@ -21,7 +24,7 @@
     </div>
 
 
-    
+
     <div class="main-div">
         <h1 id="Title" style="margin-top: 10px;">Recommanded Jobs: <%= data3.length + data2.length%></h1>
         <div class="header-dev">
@@ -34,35 +37,55 @@
                 <p class="type"><%=item.type %></p>
                 <p><%=item.location %></p>
                 <p><%=item.company_name %></p>
-                <button class="jobBtn" id="id<%= index %>" onClick=reply_click(this.id)>Apply</button>
+                <button class="jobBtn"><a href="#popup<%= index%>">Apply</a>
             </div>
-            <div style="display: none;" class="dbid<%= index %> ">
+            <div id="popup<%= index%>" class="overlay">
+                <div class="popup1">
+                    <h2>Apply for Job</h2>
+                    <a class="close1" href="#">&times;</a>
+                    <div class="content">
+                        <div class="group">
+                            <img src="<%= item.logo %>" alt="" width="80px">
+                            <h3 style="font-size: 18px; font-weight: bold; margin: 10px 0px;"><%= item.company_name %></h3>
+                            <a href="http://<%= item.company_url %>"><%= item.company_url %></a>
+                        </div>
 
-                <button class="close" id="id<%= index %>" onClick=reply_click(this.id)>Close the form</button>
-                <form action="/search/job/apply/<%=item.id%>" method="POST" class="applyForm">
-                    <div class="info">
-                        <p>company INFO</p>
-                        <img src="<%= item.logo %>" alt="" width="50px">
-                        <p><%= item.company_name %></p>
-                        <p><%= item.phone %></p>
-                        <p>Job Application</p>
+                        <hr class="hrApply">
+                        <form action="/search/job/apply/<%=item.id%>" method="POST" class="fromApply0">
+                            <div class="group">
+                                <label for="user" class="label">First Name</label>
+                                <input id="user" class="input" required type="text" name="first_name" value=""
+                                    placeholder="Please enter your first name">
+                            </div>
+                            <div class="group">
+                                <label for="lastName" class="label">Last Name</label>
+                                <input id="LastName" class="input" required type="text" name="last_name" value=""
+                                    placeholder="Please enter your last name">
+                            </div>
+                            <div class="group">
+                                <label for="country" class="label">Country</label>
+                                <input id="country" class="input" required type="text" name="country" value="<%=ip%>"
+                                    placeholder="Please enter your country name">
+                                <input type="hidden" name="company_id" value="<%= item.company_id %>">
+                                <input type="hidden" name="personID" value="<%= item.id %>">
+                            </div>
+                            <div class="group">
+                                <label for="phone" class="label">Phone No.</label>
+                                <input id="phone" class="input" required type="text" name="phone" value=""
+                                    placeholder="Please enter your phone number">
+                            </div>
+                            <div class="group groupa">
+                                <a href="<%= data.cv%>">My CV</a>
+                            </div>
+                            <div class="group">
+                                <input type="submit" class="button signUpBtn" value="Apply">
+                            </div>
+                        </form>
                     </div>
-                    <div class="form">
-                        <img src="<%= data3.avatar%>" alt="" width="50px">
-                        <input type="text" name="first_name" value="<%= data.first_name%>">
-                        <input type="text" name="last_name" value="<%= data.last_name%>">
-                        <input type="text" name="country" value="<%= data.country%>">
-                        <input type="text" name="phone" value="<%=data.phone%>">
-                        <input type="hidden" name="company_id" value="<%= item.company_id %>">
-                        <input type="hidden" name="personID" value="<%= item.id %>">
-                        <a href="<%= data.cv%>">My CV</a>
-                        <input type="hidden" name="cv" value="<%= data.cv%>">
-                        <input class="sub" type="submit" value="APPLY My Application">
-                    </div>
-                </form>
-
+                </div>
             </div>
             <% }) %>
+
         </div>
         <div class="apiInfo">
             <% data2.forEach((item,index) =>{ %>
@@ -71,16 +94,25 @@
                 <p class="title"><%=item.title %></p>
                 <p class="type"><%=item.type %></p>
                 <p><%=item.location %></p>
-                <p>CLICK DETAILS </p>
-                <button class="jobBtn" id="api<%= index %>" onClick=reply_clickapi(this.id)>DETAILS</button>
-
+                <p>-</p>
+                <button class="jobBtn"><a href="#popupp<%= index%>">Details</a>
             </div>
-            <div style="display: none;" class="api<%= index %> detailsForm">
-                <fieldset>
-                    <button class="close" id="api<%= index %>" onClick=reply_clickapi(this.id)>Close form</button>
-                    <p><%= item.location %></p>
-                    <a href="<%= item.company_url %>">company website</a>
-                </fieldset>
+            <div id="popupp<%= index%>" class="overlay">
+                <div class="popup1">
+                    <!-- <h2>Apply for Job</h2> -->
+                    <a class="close1" href="#">&times;</a>
+                    <div class="content">
+                        <div class="group">
+                            <img src="<%= item.logo %>" alt="" width="320px">
+                            <h3 style="font-size: 18px; font-weight: bold; margin: 10px 0px;"><%= item.title %></h3>
+                            <a style="font-size: 20px;" href="<%= item.company_url %>"><%= item.company_url %></a>
+                        </div>
+
+                        <hr class="hrApply">
+                        <form class="fromApply0">
+                        </form>
+                    </div>
+                </div>
             </div>
             <% }) %>
         </div>
