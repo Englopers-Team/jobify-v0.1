@@ -6,27 +6,35 @@
 
 
 <body>
-    <%- include("../../partials/login") %> 
+    <%- include("../../partials/login") %>
     <%- include("../../partials/header/guest") %>
     <h1 id="Title">Jobs</h1>
-    <% data1.forEach((item,index)=>{ %>.
-    <img src="<%= item.logo %>" alt="" width="50px">
-    <h3><%= item.title %></h3>
-    <p><%= item.type %></p>
-    <p><%= item.company_name %></p>
-    <button><a href="#popup1">Apply</a></button>
-    
-    <%})%>
 
-    <% data2.forEach(item=>{ %>.
-    <img src="<%= item.logo %>" alt="">
-    <h3><%= item.title %></h3>
-    <p><%= item.type %></p>
-    <p><%= item.company_name %></p>
-    <button><a href="#popup1">Details</a></button>
-    <%})%>
+    <div class="job-dev">
+        <% data1.forEach((item,index)=>{ %>.
+        <div class="jobResult">
+            <img src="<%= item.logo %>" alt="" width="50px">
+            <h3><%= item.title %></h3>
+            <p><%= item.type %></p>
+            <p><%= item.company_name %></p>
+            <p><%= item.country %></p>
+            <button><a href="#popup1">Apply</a></button>
+        </div>
 
-    
+        <%})%>
+
+        <% data2.forEach(item=>{ %>.
+        <div class="jobResult">
+            <img src="<%= item.logo %>" alt="">
+            <h3><%= item.title %></h3>
+            <p><%= item.type %></p>
+            <p><%= item.company_name %></p>
+            <button><a href="#popup1">Details</a></button>
+        </div>
+        <%})%>
+
+    </div>
+
 </body>
 
 <%- include("../../partials/footer") %>
@@ -36,7 +44,9 @@
 </div>
 <div id="popup1" class="overlay">
     <div class="popup1">
-        <a href="/signup"><h2>Signup</h2></a>
+        <a href="/signup">
+            <h2>Signup</h2>
+        </a>
         <a class="close1" href="#">&times;</a>
         <div class="content">
             Want apply and see more details? <strong><a href="/signup">Click here</a></strong>.
