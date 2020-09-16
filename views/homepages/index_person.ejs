@@ -46,7 +46,8 @@
                     <div class="content">
                         <div class="group">
                             <img src="<%= item.logo %>" alt="" width="80px">
-                            <h3 style="font-size: 18px; font-weight: bold; margin: 10px 0px;"><%= item.company_name %></h3>
+                            <h3 style="font-size: 18px; font-weight: bold; margin: 10px 0px;"><%= item.company_name %>
+                            </h3>
                             <a href="http://<%= item.company_url %>"><%= item.company_url %></a>
                         </div>
 
@@ -54,13 +55,13 @@
                         <form action="/search/job/apply/<%=item.id%>" method="POST" class="fromApply0">
                             <div class="group">
                                 <label for="user" class="label">First Name</label>
-                                <input id="user" class="input" required type="text" name="first_name" value="<%= data.first_name%>"
-                                    placeholder="Please enter your first name">
+                                <input id="user" class="input" required type="text" name="first_name"
+                                    value="<%= data.first_name%>" placeholder="Please enter your first name">
                             </div>
                             <div class="group">
                                 <label for="lastName" class="label">Last Name</label>
-                                <input id="LastName" class="input" required type="text" name="last_name" value="<%= data.last_name%>"
-                                    placeholder="Please enter your last name">
+                                <input id="LastName" class="input" required type="text" name="last_name"
+                                    value="<%= data.last_name%>" placeholder="Please enter your last name">
                             </div>
                             <div class="group">
                                 <label for="country" class="label">Country</label>
@@ -71,8 +72,8 @@
                             </div>
                             <div class="group">
                                 <label for="phone" class="label">Phone No.</label>
-                                <input id="phone" class="input" required type="text" name="phone" value="<%= data.phone%>"
-                                    placeholder="Please enter your phone number">
+                                <input id="phone" class="input" required type="text" name="phone"
+                                    value="<%= data.phone%>" placeholder="Please enter your phone number">
                             </div>
                             <div class="group groupa">
                                 <a href="<%= data.cv%>">My CV</a>
