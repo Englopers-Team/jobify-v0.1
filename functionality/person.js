@@ -62,7 +62,7 @@ obj.personOffers = (req, res) => {
         let id = data.rows[0].id;
         let SQL = `SELECT * FROM person WHERE auth_id=${id};`
         mainObj.client.query(SQL).then((data1) => {
-            let SQL2 = `SELECT job_offers.id,status,title,type,location,description,company_name,logo,company_url FROM job_offers JOIN company ON job_offers.company_id=company.id WHERE person_id=${data.rows[0].id};`
+            let SQL2 = `SELECT job_offers.id,status,title,type,location,description,company_name,logo,company_url FROM job_offers JOIN company ON job_offers.company_id=company.id WHERE person_id=${data1.rows[0].id};`
             mainObj.client.query(SQL2).then(data2 => {
                 res.render("pages/person/offers", { data: data1.rows[0], data2: data2.rows })
             })
