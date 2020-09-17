@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../../partials/head") %>
+
+<body>
+    <%- include("../../partials/header/company") %>
+    <!-- <form action="/search/person/search" method="get">
+        <input type="text" name="job_title" value="">
+        <input type="text" name="country" value="<%= ip%>">
+        <button>SEARCH</button>
+    </form> -->
+    <h1 id="Title">Search for Employees</h1>
+    <hr id="hrTitle">
+    <div class="searchForm">
+        <form class="mainFlex" action="/search/person/search" method="get">
+            <div id="searchBoxes" style="display: flex; flex-wrap: nowrap;">
+                <input type="text" name="job_title" value="" placeholder="Job Title">
+                <input type="text">
+                <input type="text" name="country" value="<%= ip%>" placeholder="Country">
+            </div>
+            <div class="searchBtn">
+                <input class="searchBtnStyle" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <%- include("../../partials/footer") %>
+</body>
+
+</html>
+
+<!-- <div class="searchForm">
+    <form class="mainFlex" action="/search/person/search" method="get">
+        <div id="searchBoxes">
+            <input type="text" name="job_title" value="" placeholder="Job Title">
+            <input type="text">
+            <input type="text" name="country" value="<%= ip%>" placeholder="Country">
+        </div>
+        <div class="searchBtn">
+            <input class="searchBtnStyle" type="submit" value="Search">
+        </div>
+    </form>
+</div> -->

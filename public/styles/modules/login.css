@@ -1,0 +1,175 @@
+
+#js-lightbox-bg {
+    background: rgba(0, 0, 0, 0.5) repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    float: left;
+    display: none;
+	transition: none;
+    overflow-y: none;
+	
+}
+
+#js-lightbox-main {
+    position: fixed;
+    z-index: 999;
+    box-shadow: 0px 3px 20px #000;
+    display: none;
+    transition: none;
+	background: #fff;
+    min-width: 500px;
+    min-height: 510px;
+	/* padding: 30px 80px 80px 80px; */
+	
+
+}
+
+#js-lightbox-main .panel {
+    border: none
+}
+
+#js-lightbox-main .panel .panel-body {
+    padding-top: 0
+}
+
+#js-lightbox-main .panel .panel-heading {
+    padding: 0;
+    background: #006a71;
+	padding: 10px 0;	
+}
+
+#js-lightbox-main .panel .panel-title {
+    font-size: 20px;
+    border-bottom: 1px solid #006a71;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0
+}
+
+#js-lightbox-main #js-lightbox-close {
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    right: 5px;
+    top: -10px;
+    z-index: 9
+}
+
+#js-lightbox-main #js-lightbox-close .glyphicon-remove {
+    color: #006a71;
+    font-size: 15px
+}
+
+#loginForm {
+	margin:10% auto 0 auto;
+	padding:30px;
+	width:400px;
+	height:auto;
+	background:white;
+	border-radius:10px;
+}
+
+#loginForm label {
+	font-size:14px;
+	color: #006a71;
+	cursor:pointer;
+}
+
+#loginForm label,
+#loginForm input {
+	float:left;
+	clear:both;
+}
+
+#loginForm input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:5px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+			transition:0.2s ease all;
+			font-size: 20px;
+}
+#loginForm input:nth-of-type(1){
+	margin-top: 30px;
+} 
+
+#loginForm input::placeholder{
+	font-size: 20px;
+}
+
+
+#loginForm input[type=text]:focus,
+#loginForm input[type="password"]:focus {
+	border-color:cornflowerblue;
+}
+
+#loginForm input[type=submit] {
+	padding:15px 50px;
+	width:100%;
+	background:#ff7e67;
+	font-size: 25px;
+	border:none;
+	color:white;
+	cursor:pointer;
+	display:inline-block;
+	float:right;
+	clear:right;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+#loginForm input[type=submit]:hover {
+	opacity:0.8;
+}
+
+#loginForm input[type="submit"]:active {
+	opacity:0.4;
+}
+
+.forgot,
+.register {
+	margin:10px;
+	float:left;
+	clear:left;
+	display:inline-block;
+	color:#006a71;
+	text-decoration:none;
+}
+
+.forgot:hover,
+.register:hover {
+	color:darkgray;
+}
+
+#logoo {
+	margin:0 auto;
+	width:200px;
+	font-size:60px;
+	font-weight:bold;
+	text-align:center;
+	color:#006a71;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+#logoo:hover {
+	color:#68b0ab;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../../partials/head") %>
+
+
+
+<body>
+    <%- include("../../partials/header/person") %>
+    <% if(data1 == undefined){ %>
+    <h1 id="Title">Can't find any company with that name</h1>
+    <hr id="hrTitle">
+    <% }else{ %>
+    <h1 id="Title">Company Result</h1>
+    <hr id="hrTitle">
+    <div class="companyDetails">
+        <img src="<%= data1.logo%>" alt="">
+        <p class="name"><%= data1.company_name%></p>
+        <a class="curuse" href="<%= data1.email%>">Send Email</a>
+        <a class="curuse" href="<%= data1.url%>">Company Site</a>
+        <p><%= data1.phone%></p>
+        <p><%= data1.country%></p>
+    </div>
+    <% } %>
+    <%- include("../../partials/footer") %>
+</body>
+<div style="display:flex; justify-content: center; align-items: center;" class='splash'>
+    <img src="../../imgs/splash.gif" alt="">
+</div>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head") %>
+<!-- <link rel="stylesheet" href="../../styles/modules/personBG.css"> -->
+<body>
+    <%- include("../partials/header/company") %>
+    <h1 id="Title">Welcome, <%=data.company_name%></h1>
+    <div class="companyHomepage">
+        <section class="application">
+            <div class="formHeader">
+                <h1>Applications: <%= data2.length%></h1>
+            </div>
+            <% data2.forEach(item =>{ %>
+            <div class="applicationForm">
+                <form action="/company/apps/answer/<%=item.id%>?_method=put" method="post">
+                    <img src="<%=item.avatar%>" alt="">
+                    <p class="name"><%= item.first_name %> <%= item.last_name %></p>
+                    <p><%= item.title %></p>
+                    <% if(item.experince == null){ %>
+                    <p>-</p>
+                    <%}else{%>
+                    <p><%= item.experince %> years</p>
+                    <%}%>
+                    <p><a href="<%= item.cv %>">CV Link</a></p>
+                    <select name="status">
+                        <% if(item.status == 'Pending'){ %>
+                        <option selected value="Pending">Pending</option>
+                        <option value="Accepted">Accept</option>
+                        <option value="Rejected">Reject</option>
+                        <% }else if(item.status == 'Accepted'){ %>
+                        <option selected value="Accepted">Accepted</option>
+                        <option value="Rejected">Reject</option>
+                        <% } else{ %>
+                        <option value="Accepted">Accept</option>
+                        <option selected value="Rejected">Rejected</option>
+                        <% } %>
+                    </select>
+                    <button style="background-color: #ff7e67; color: black;">Update</button>
+                </form>
+            </div>
+            <% }) %>
+        </section>
+        <section class="offers">
+            <div class="formHeader">
+                <h1>Offers: <%= data3.length%></h1>
+            </div>
+            <% data3.forEach(item =>{ %>
+            <div class="offersForm">
+                <form action="/company/offer/delete/<%=item.id %>?_method=delete" method="post">
+                    <img src="<%= item.avatar%>" alt="">
+                    <p><%= item.first_name%> <%= item.last_name%></p>
+                    <p><%= item.title%></p>
+                    <p><%= item.type%></p>
+                    <p><%= item.status%></p>
+                    <button style="background-color: #ff7e67; color: black;">Delete</button>
+                </form>
+            </div>
+            <%})%>
+        </section>
+    </div>
+</body>
+<%- include("../partials/footer") %>
+
+</html>

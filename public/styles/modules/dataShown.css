@@ -1,0 +1,242 @@
+/* --------------------------company home page---------------------------- */
+.companyHomepage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.application , .offers {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    border: 2px solid  white;
+    margin: 50px auto;
+}
+.applicationForm  , .offersForm{
+    margin: 20px;
+}
+
+.applicationForm form , .offersForm form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0 20px;
+    background-color: rgba(0, 0, 0, 0.144);
+    height: 50px;
+}
+.applicationForm form  .name, .offersForm form .name{
+    width: 20% !important;
+}
+.applicationForm form  > *, .offersForm form > * {
+    margin: 0 20px;
+    width: 16%;
+    color: white;
+    font-size: large;
+    line-height: 50px;
+
+
+}
+
+.applicationForm form img, .offersForm form img{
+    width: 50px ;
+    height: 50px ;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.applicationForm form p a, .offersForm form p a{
+    color: white;
+    text-decoration: none;
+}
+.applicationForm form p a:hover, .offersForm form p a:hover{
+    color:#ff7e67 ;
+    cursor: pointer;
+}
+.applicationForm form select, .offersForm form select{
+    background-color: #006a71;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    width: 13% !important;
+}
+.applicationForm form select option, .offersForm form select option{
+    background-color: #006a71;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    width: 13% !important;
+
+}
+.applicationForm form button , .offersForm form button {
+    background-color: #006a71;
+    color: white;
+    border-radius:5px ;
+}
+.applicationForm form button:hover , .offersForm form button:hover{
+    color: #ff7e67 ;
+    cursor: pointer;
+    box-shadow: 1.8px 1.8px rgb(167, 166, 166);
+}
+.formHeader{
+    font-size: 25px;
+    margin: 15px;
+    padding: 10px 20px;
+}
+.formHeader h1 {
+    color: white;
+}
+/* --------------------------person home page---------------------------- */
+.main-div{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    border: 2px solid  white;
+    margin: 50px auto;
+}
+.header-dev{
+    font-size: 25px;
+    margin: 15px;
+    padding: 10px 20px;
+}
+.header-dev h2{
+    color: white;
+}
+
+.dbInfo ,.apiInfo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.suggJobs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0 20px;
+    background-color: rgba(0, 0, 0, 0.144);
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    
+
+}
+.suggJobs > *{
+    width: 10%;
+    margin: 0 20px;
+    color: white;
+    font-size: large;
+    line-height: 50px;
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.suggJobs img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+.suggJobs .jobBtn{
+    background-color: #ff7e67;
+    color: black;
+    border-radius:5px ;
+    text-align: center;
+}
+.suggJobs .jobBtn:hover{
+    background: #006a71;
+    color: white ;
+    cursor: pointer;
+    box-shadow: 1.8px 1.8px rgb(167, 166, 166);
+
+}
+
+.applyForm{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0 20px;
+    background-color: rgba(0, 0, 0, 0.144);
+    height: 50px;
+    margin-top: 20px;
+
+}
+.info > *{
+    color: white;
+    font-size: 20px;
+
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 20%;
+    margin: 0 auto;
+}
+.form > *{
+margin: 10px;
+padding: 10px 20px;
+background-color: #006a71;
+color: white;
+border-radius:5px ;
+font-size: 20px;
+
+
+}
+.form a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+.form .sub:hover{
+    color: #ff7e67 ;
+    cursor: pointer;
+    box-shadow: 1.8px 1.8px rgb(167, 166, 166);
+}
+.form a:hover{
+    color: #ff7e67;
+    cursor: pointer;
+}
+.close{
+    background-color: #006a71;
+    color: white;
+    border-radius:5px ;
+    margin-top: 15px;
+    font-size: 20px;
+    padding: 10px 20px;
+
+}
+.close:hover{
+    color: #ff7e67 ;
+    cursor: pointer;
+    box-shadow: 1.8px 1.8px rgb(167, 166, 166);
+}
+.detailsForm fieldset p,.detailsForm fieldset a{
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.detailsForm fieldset a{
+    margin-top: 20px !important;
+
+}
+.detailsForm fieldset a:hover{
+    color: #ff7e67;
+    cursor: pointer;
+}

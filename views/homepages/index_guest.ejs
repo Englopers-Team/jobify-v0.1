@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head") %>
+
+<body>
+    <%- include("../partials/header/guest") %>
+    <%- include("../partials/login") %>
+    <h1 id="Title">Find the Job you Love</h1>
+    <hr id="hrTitle">
+    <div class="searchForm">
+        <form class="mainFlex" action="/search/job" method="get">
+            <div style="display: flex; flex-wrap: nowrap;" id="searchBoxes">
+                <input type="text" name="title" value="" placeholder="Job Title">
+                <input type="text">
+                <input type="text" name="location" value="<%= ip%>" placeholder="Country">
+            </div>
+            <div class="searchBtn">
+                <input class="searchBtnStyle" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+</body>
+<%- include("../partials/footer") %>
+<script src="../js/auth.js"></script>
+<div style="display:flex; justify-content: center; align-items: center;" class='splash'>
+    <img src="../../imgs/splash.gif" alt="">
+</div>
+
+</html>

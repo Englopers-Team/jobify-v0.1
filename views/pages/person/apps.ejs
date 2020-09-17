@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../../partials/head") %>
+
+<body>
+    <%- include("../../partials/header/person") %>
+    <h1 id="Title">My Applications</h1>
+    <div>
+        <%console.log(data2)%>
+        <%data2.forEach(item=>{%>
+        <div class="myApp">
+            <img src="<%= item.logo%>" alt="">
+            <h3><%= item.title%></h3>
+            <p><%= item.company_name%></p>
+            <p><%= item.status%></p>
+
+            <form action="/person/apps/<%= data2[0].id%>?_method=delete" method="post">
+                <button style="background-color: #ff7e67; color: black;" type="submit">Delete</button>
+            </form>
+        </div>
+        <%})%>
+    </div>
+</body>
+
+<%- include("../../partials/footer") %>
+
+</html>

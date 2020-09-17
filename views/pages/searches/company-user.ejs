@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../../partials/head") %>
+
+<body>
+    <%- include("../../partials/header/person") %>
+    <h1 id="Title">Search for Specific Company</h1>
+    <hr id="hrTitle">
+    <div class="searchForm">
+        <form class="mainFlex" action="/search/company/result" method="get">
+            <div id="searchBoxes" style="display: flex; flex-wrap: nowrap;">
+                <input type="text" name="company_name" value="" placeholder="Company name">
+                <input type="text">
+                <input type="text" name="country" value="<%= ip%>" placeholder="Country">
+            </div>
+            <div class="searchBtn">
+                <input class="searchBtnStyle" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <%- include("../../partials/footer") %>
+</body>
+
+</html>
